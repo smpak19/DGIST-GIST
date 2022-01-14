@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom"
 
+
 function Login() {
+
+	const REST_API_KEY = "a77e93ca6119c6cecfe89bad506f9e1b";
+	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
+	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+
 	const [id, setId] = useState('');
 	const [pw, setPw] = useState('');
 	function handleClick(e) {
@@ -28,6 +34,9 @@ function Login() {
 				<Link to = "/register">
 				<button>회원가입</button>
 				</Link>
+				<div>
+					<a href={KAKAO_AUTH_URL}>Kakao Login</a>
+				</div>
 			</form>
       </>
     

@@ -11,7 +11,7 @@ function Main() {
 
             <div className= "Body">
                 <h1>DGIST 졸업요건 계산기</h1>
-                <Link to ="/survey">
+                <Link to ="/login">
                     <button><h3>시작하기</h3></button>
                 </Link> 
             </div>
