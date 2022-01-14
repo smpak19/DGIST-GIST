@@ -11,7 +11,7 @@ function Main() {
 
             <div className= "Body">
                 <h1>DGIST-UNIST-GIST</h1>
-                <Link to ="/login">
+                <Link to ="/survey">
                     <button><h3>시작하기</h3></button>
                 </Link> 
             </div>
