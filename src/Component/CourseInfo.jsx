@@ -29,7 +29,7 @@ function CourseInfo({course, taken, settaken}) {
         }
       }
     return (
-        <div>
+        <div >
             <b> {courseId} </b>
             <span> {courseName} </span>
             <input 
