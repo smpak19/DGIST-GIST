@@ -6,11 +6,11 @@ function Main() {
     return (
         <div className="Main">
              <header className ="Header">
-                <h1>Madcamp week 3</h1>
+                <h1>치타는 오늘도 달리고 있다.</h1>
             </header>
 
             <div className= "Body">
-                <h1>DGIST-UNIST-GIST</h1>
+                <h1>DGIST 졸업요건 계산기</h1>
                 <Link to ="/survey">
                     <button><h3>시작하기</h3></button>
                 </Link> 
