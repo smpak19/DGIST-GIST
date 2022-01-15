@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import {Link} from "react-router-dom"
 
 function Login() {
-	const [id, setId] = useState('');
-	const [pw, setPw] = useState('');
+	// const [id, setId] = useState('');
+	// const [pw, setPw] = useState('');
 	function handleClick(e) {
 		e.preventDefault();
     // setId(id);
