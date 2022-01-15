@@ -8,17 +8,13 @@ function Survey() {
    const survey = {
     id: 1,
     question: "학번을 선택해주세요.",
-    answers: [{text: "14"} ,{text: "15"} ,{text: "16"}, {text: "17"}, {text: "18"}, {text: "19"}, {text: "20"}, {text: "21"}]
+    answers: [{text: "14"} ,{text: "15"} ,{text: "16"}, {text: "17"}, {text: "18"}, {text: "19"}]
     }
     const nav = useNavigate()
 
     const handleClick = (text) => {
         anslist.push(text)
-        if( Number(text) > 19) {
-            nav("/freshcourse", {state: text})
-        } else {
-            nav("/courses", {state: text})
-        }
+        nav("/courses", {state: text})
     } 
    
    return(

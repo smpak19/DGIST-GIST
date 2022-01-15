@@ -30,7 +30,7 @@ function ratio19(arr, num) {
             } else if(['BS113', 'BS118', 'BS119'].includes(name)) {
                 chem += arr[i].학점
             } else if(['BS114', 'BS115', 'BS116', 'LS204'].includes(name)) {
-                bio += arr[i].학점
+                bio += arr[i].학점 // 빠진 수업 있음
             } else if(['BE101a', 'SE211a', 'MECH309', 'TP101'].includes(name)) {
                 comset += arr[i].학점
             } else if(['RP301', 'RP302'].includes(name)) {
@@ -50,8 +50,4 @@ function ratio19(arr, num) {
     return [gyo, gong, math, phy, chem, bio, comset, ugrp, eng, leader, music, lit]
 }
 
-function ratio20(arr, num) {
-
-}
-
-export {ratio19, ratio20}
+export {ratio19}
