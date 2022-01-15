@@ -15,7 +15,7 @@ function Login() {
     // setId(id);
 		// setPw(pw);
 		console.log(e.target.id.value);
-    console.log(e.target.pw.value);
+		console.log(e.target.pw.value);
 		// console.log(pw);
   }
   return (

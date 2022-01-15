@@ -21,29 +21,20 @@ function Courses() {
         console.log('You clicked submit.!!!');
         console.log(isheard)
         nav("/result", {state: {arr: isheard, num: loc.state}})
-        // axios.get("http://192.249.18.176:443")
-    // .then(function (response) )
-    //     {
-    //         // response  
-    //    }).catch(function (error) {
-    //        // 오류발생시 실행
-    //    }).then(function() {
-    //        // 항상 실행
-    //    });
-    // {id:"asdf", pwd: "123"}
-    const param = {
-        id: "asdf",
-        pwd:"123"
+        axios.post("http://192.249.18.176:443/user", {userid : "강준서" , taken : {isheard}});
     }
-        axios.post("http://192.249.18.176:443/user", {isheard});
-        // .then(function (response) {
-        //     // response  
-        // }).catch(function (error) {
-        //     // 오류발생시 실행
-        // }).then(function() {
-        //     // 항상 실행
-        // });
-      }
+
+
+    function getInfo(e) {
+        e.preventDefault();
+        console.log('You clicked submit.!!!');
+        axios.get("http://192.249.18.176:443/user/강준서").then(result => {
+            console.log(result.data)
+            setisheard(result.data)
+            console.log("isheard",isheard)
+        })
+    }
+
       const boxstyle = {
         width : "90%",
         margin : "0 auto"
@@ -61,9 +52,12 @@ function Courses() {
             <div style={boxstyle}>{ (course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                      item.과목번호.includes(search) ||
                      item.교과목명.includes(search)))
-                     .map(e => (<CourseInfo course = {e} taken = {isheard} settaken = {setisheard} />)) } </div>
+                     .map((e, index) => (<CourseInfo course = {e} taken = {isheard} settaken = {setisheard} key = {index} />)) } </div>
             <form onSubmit={handleSubmit}>
                 <button onClick={() => handleSubmit}>제출하기 </button>
+            </form>
+            <form onSubmit={getInfo}>
+                <button onClick={() => getInfo}>정보 가져오기 </button>
             </form>
         </div>
         
