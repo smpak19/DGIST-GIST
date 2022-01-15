@@ -8,7 +8,6 @@ import Result from "./pages/Result"
 import Auth from "./pages/Auth"
 import Profile from "./pages/Profile"
 import Register from "./pages/Register"
-import FreshCourse from "./pages/Freshcourse";
 
 function Routers() {
     return (
@@ -22,7 +21,6 @@ function Routers() {
             <Route path = '/oauth/kakao/callback' element = {<Auth/>}/>
             <Route path = '/profile' element = {<Profile/>}/>
             <Route path = '/register' element = {<Register/>}/> 
-            <Route path = '/freshcourse' element = {<FreshCourse/>} />
         </Routes>
         </div>
     )
