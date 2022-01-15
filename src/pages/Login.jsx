@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import {Link} from "react-router-dom"
 
@@ -12,11 +13,13 @@ function Login() {
 	const [pw, setPw] = useState('');
 	function handleClick(e) {
 		e.preventDefault();
-    // setId(id);
-		// setPw(pw);
+    
 		console.log(e.target.id.value);
     console.log(e.target.pw.value);
-		// console.log(pw);
+		
+		var json = {id: e.target.id.value, pw: e.target.pw.value};
+
+		axios.post('http://192.249.18.176:443/login', json);
   }
   return (
     <>
