@@ -30,17 +30,18 @@ function CourseInfo({course, taken, settaken}) {
       }
 
       let style = {
-          border: "1px solid black"
+          border: "1px solid black",
+          padding: "20px"
       }
 
     return (
         <div style={style}>
             <b> {과목번호} </b>
-            <span> {교과목명} / </span>
-            <span> {이수구분} / </span>
-            <span> {교과분야} / </span>
-            <span> {교과영역} / </span>
-            <span> {학위구분} / </span>
+            <span> {교과목명}  / </span>
+            <span> {이수구분}  / </span>
+            <span> {교과분야}  / </span>
+            <span> {교과영역}  / </span>
+            <span> {학위구분}  / </span>
             <span> {비고} </span>
             <input 
                 type = "checkbox" 

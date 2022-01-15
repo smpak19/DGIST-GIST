@@ -14,7 +14,11 @@ function Survey() {
 
     const handleClick = (text) => {
         anslist.push(text)
-        nav("/courses", {state: text})
+        if( Number(text) > 19) {
+            nav("/freshcourse", {state: text})
+        } else {
+            nav("/courses", {state: text})
+        }
     } 
    
    return(
