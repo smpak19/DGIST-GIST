@@ -23,7 +23,10 @@ function Courses() {
       }
       const boxstyle = {
         width : "90%",
-        margin : "0 auto"
+        height : "30rem",
+        margin : "0 auto",
+        overflow: "auto",
+        border: "1px solid black"
     }
 
     return (
@@ -35,13 +38,17 @@ function Courses() {
                 }}/>
                 <button>Search</button>
             </div>
-            <div style={boxstyle}>{ (course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
+            <div style={boxstyle}>
+                { (course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                      item.과목번호.includes(search) ||
                      item.교과목명.includes(search)))
-                     .map(e => (<CourseInfo course = {e} taken = {isheard} settaken = {setisheard} />)) } </div>
-            <form onSubmit={handleSubmit}>
-                <button onClick={() => handleSubmit}>제출하기 </button>
-            </form>
+                     .map(e => (<CourseInfo course = {e} taken = {isheard} settaken = {setisheard} />)) }
+             </div>
+             <div>
+                <form onSubmit={handleSubmit} >
+                    <button onClick={() => handleSubmit}>제출하기 </button>
+                </form>
+             </div>
         </div>
         
     )

@@ -1,6 +1,6 @@
 import React from "react";
 import {useLocation, Link} from 'react-router-dom'
-import { ratio19, ratio20 } from './model.js'
+import { ratio19 } from './model.js'
 
 function Result() {
 
