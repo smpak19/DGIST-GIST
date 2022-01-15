@@ -1,24 +1,32 @@
 
-import {React, useState} from "react";
+import {React, useState, useEffect} from "react";
 
 
-function CourseInfo({course, taken, settaken}) {
+function CourseInfo({course, taken, settaken,index}) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
+    const [checkbox, setcheckbox] = useState(false);
+    // let takenthiscourse = false; 
+    useEffect(() => {
+        takencourse.forEach((e)=>{
+            // if(e.과목번호 == 과목번호)
+            //     console.log(e.과목번호, 과목번호)
+            if(e.과목번호 == 과목번호) {
+                // console.log(`hello`)
+                // takenthiscourse = true;
+                setcheckbox(true)
+            }
+        })
+    }, [taken])
 
-    let takenthiscourse = false; 
-    takencourse.forEach((e)=>{
-        if(e === course) takenthiscourse = true;
-    })
+    
 
-    const [checkbox, setcheckbox] = useState(takenthiscourse);
+    // const [checkbox, setcheckbox] = useState(takenthiscourse);
 
     function handleCheck(e) {
-        
-        console.log('You clicked submit.');
         if(checkbox){
             setcheckbox(false)
-            settaken(taken.filter(tkn => tkn !== course))
+            settaken(taken.filter(tkn => tkn.과목번호 !== course.과목번호))
             console.log(taken)
         }
         else {
