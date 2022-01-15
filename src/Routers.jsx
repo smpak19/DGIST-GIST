@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import {Routes, Route} from "react-router-dom"
 import Main from "./pages/Main"
 import Login from "./pages/Login"
@@ -10,15 +10,16 @@ import Profile from "./pages/Profile"
 import Register from "./pages/Register"
 
 function Routers() {
+    const [userId,setUserId] = useState("");
+
     return (
         <div>
         <Routes>
             <Route path ="/" element={<Main/>} />
-            <Route path ="/login" element = {<Login/>} />
-            <Route path ="/courses" element = {<Courses/>} />
-            <Route path ="/survey" element = {<Survey/>}/>
-            <Route path = "/courses" element= {<Courses/>} /> 
-            <Route path = "/result" element= {<Result/>} /> 
+            <Route path ="/login" element = {<Login getId={setUserId}/>} />
+            <Route path ="/courses" element = {<Courses userId = {userId} />} />
+            <Route path ="/survey" element = {<Survey userId = {userId} />}/>
+            <Route path = "/result" element= {<Result userId = {userId} />} /> 
             <Route path = '/oauth/kakao/callback' element = {<Auth/>}/>
             <Route path = '/profile' element = {<Profile/>}/>
             <Route path = '/register' element = {<Register/>}/> 
