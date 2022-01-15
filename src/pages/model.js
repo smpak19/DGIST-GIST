@@ -30,7 +30,7 @@ function ratio19(arr, num) {
             } else if(['BS113', 'BS118', 'BS119'].includes(name)) {
                 chem += arr[i].학점
             } else if(['BS114', 'BS115', 'BS116', 'LS204'].includes(name)) {
-                bio += arr[i].학점
+                bio += arr[i].학점 // 빠진 수업 있음
             } else if(['BE101a', 'SE211a', 'MECH309', 'TP101'].includes(name)) {
                 comset += arr[i].학점
             } else if(['RP301', 'RP302'].includes(name)) {
@@ -47,11 +47,15 @@ function ratio19(arr, num) {
 
         }
     }
-    return [gyo, gong, math, phy, chem, bio, comset, ugrp, eng, leader, music, lit]
+    return [gong, gyo, math, phy, chem, bio, comset, ugrp, eng, leader, music, lit]
 }
 
-function ratio20(arr, num) {
-
+function getlimit(num) {
+    if(num < 18) {
+        return [80, 67, 12, 8, 8, 8, 12, 6, 6, 4, 4, 12]
+    } else {
+        return [72, 68, 12, 7, 7, 7, 9, 6, 6, 2, 4, 12]
+    }
 }
 
-export {ratio19, ratio20}
+export {ratio19, getlimit}

@@ -1,33 +1,42 @@
 import React from "react";
-import {useLocation} from 'react-router-dom'
-import { ratio19, ratio20 } from './model.js'
+import {useLocation, Link} from 'react-router-dom'
+import { ratio19, getlimit } from './model.js'
 
 function Result() {
-
+    let txt = ["공통필수", "교선필수", "수학", "물리", "화학", "생물", "컴퓨터, 자동제어, 통계, 디자인공학", "융복합(UGRP, 기타)", "영어", "리더십", "음악, 체육", "인문사회, 기술경영"]
     const location = useLocation()
     const num = Number(location.state.num)
-    let arr = []
+    let arr = ratio19(location.state.arr, num)
+    let res = getlimit(num)
 
-    if(num > 19) {
-        arr = ratio20(location.state.arr, num) 
-    } else {
-        arr = ratio19(location.state.arr, num)
-    }
-    console.log(location.state)
+    function mklst() {
+        return( 
+            txt.map((item, i) =>
+                <div>
+                    <h2>
+                        {item} {arr[i]}학점 이수, {res[i] - arr[i]}학점 부족
+                    </h2>
+                    <progress value = {arr[i]/ res[i]} max = "1"></progress>
+                    <span> {arr[i]*100/res[i]}% 이수</span>
+                </div>
+            )
+            
+        )}
+
     return(
-        <div>
-            <h1>gongtong pilsu {arr[1]}</h1>
-            <h1>gyosun pilsu {arr[0]}</h1>
-            <h1>math {arr[2]}</h1> 
-            <h1>phy {arr[3]}</h1>
-            <h1>chem {arr[4]}</h1>
-            <h1>bio {arr[5]}</h1>
-            <h1>comset {arr[6]}</h1>
-            <h1>ugrp {arr[7]}</h1>
-            <h1>eng {arr[8]}</h1>
-            <h1>leader {arr[9]}</h1>
-            <h1>music {arr[10]}</h1>
-            <h1>lit {arr[11]}</h1>
+        <div> 
+            <div>
+                <Link to="/">
+                    <button>Logout</button>
+                </Link>
+                <Link to="/courses">
+                    <button>Edit lecture list</button>
+                </Link>
+                <Link to="/profile">
+                    <button>User Info</button>
+                </Link>
+            </div>
+            {mklst()}
         </div>
     )
 }
