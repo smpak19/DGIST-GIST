@@ -1,12 +1,9 @@
-
 import React, { useState} from 'react';
 import CourseInfo from "../Component/CourseInfo";
-import data from "./until19.json"
+import data from "./from20.json"
 import {useNavigate, useLocation} from 'react-router-dom'
 
-function Courses() {
-    // const [courses, setcourse] = useState([{courseId : 'cse496', courseName : '몰입캠프'}, {courseId : 'cse123', courseName : '데이터 구조'}, {courseId : 'cse234', courseName : '운영체제'}])
-    // 전체 과목
+function FreshCourse() {
     const course = data
     // 사용자가 들은 과목
     const [search, setSearch] = useState('')
@@ -21,11 +18,13 @@ function Courses() {
         console.log(isheard)
         nav("/result", {state: {arr: isheard, num: loc.state}})
       }
-      const boxstyle = {
+
+
+    const boxstyle = {
         width : "90%",
         margin : "0 auto"
     }
-
+    // json column name 다름 전공트랙 추가해줘야 함.
     return (
         
         <div>
@@ -47,4 +46,4 @@ function Courses() {
     )
 }
 
-export default Courses
+export default FreshCourse
