@@ -1,11 +1,18 @@
 import React from "react";
 import {useLocation} from 'react-router-dom'
-import { ratio19 } from './model.js'
+import { ratio19, ratio20 } from './model.js'
 
 function Result() {
 
     const location = useLocation()
-    const arr = ratio19(location.state.arr, location.state.num)
+    const num = Number(location.state.num)
+    let arr = []
+
+    if(num > 19) {
+        arr = ratio20(location.state.arr, num) 
+    } else {
+        arr = ratio19(location.state.arr, num)
+    }
     console.log(location.state)
     return(
         <div>

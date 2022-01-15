@@ -50,4 +50,8 @@ function ratio19(arr, num) {
     return [gyo, gong, math, phy, chem, bio, comset, ugrp, eng, leader, music, lit]
 }
 
-export {ratio19}
+function ratio20(arr, num) {
+
+}
+
+export {ratio19, ratio20}
