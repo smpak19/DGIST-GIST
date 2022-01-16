@@ -1,0 +1,31 @@
+.logoutbutton {
+  background-color: red;
+  margin-right: 2cm;
+  font-family: "../fonts/IM_Hyemin_Regular.ttf";
+}
+
+.resultbody {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5cm;
+}
+
+.buttongroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-top: 2cm;
+  margin-left: 2cm;
+}
+
+.resulttable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1.6cm;
+}
+
+.resultitem {
+  font-size: 1.5rem;
+}

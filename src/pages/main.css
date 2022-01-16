@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 .top {
-  min-height: 50px;
+  min-height: 2cm;
 }
 
 .domain {
   text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 4rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }
 
 .mainbody {

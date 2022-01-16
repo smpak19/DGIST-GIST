@@ -1,0 +1,20 @@
+.surveybody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userid {
+  margin-top: 8cm;
+  font-size: 2rem;
+}
+
+.question {
+  margin-top: 2cm;
+  font-size: 1.5rem;
+}
+
+.answer {
+  font-size: 2rem;
+}

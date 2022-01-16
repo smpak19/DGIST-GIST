@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import {useNavigate} from "react-router-dom"
+import './Register.css';
 
 
 function Register() {
@@ -32,26 +33,27 @@ function Register() {
   }
   return (
     <>
-      <h1>Register</h1>
+		<div className='top'/>
+		<div className='domain'>회원가입</div>
+		<div className='registerbody'>
 			<form onSubmit={handleClick}>
-				<div>
-					<label>ID : </label>
-					<input name="id" type = "text"  placeholder='user ID' required/>
+				<div className='registerparent'>
+					<div className='registerchild'> 
+						<div>
+							<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+						</div>
+						<div>
+							<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
+						</div>
+                        <div>
+							<input className='inputpw' name="rpw" type = "password" placeholder='confirm password' required/>
+						</div>
+					</div>
+					<button className = "registerbutton" type='submit'>회원가입</button>
 				</div>
-				<div>
-					<label>PW : </label>
-					<input name="pw" type = "password" placeholder='password' required/>
-				</div>
-                <div>
-					<label>Confirm PW : </label>
-					<input name="rpw" type = "password" placeholder='password' required/>
-				</div>
-
-
-				<button type='submit'>회원가입</button>
-								
 			</form>
-      </>
+		</div>
+	</>
     
   );
 }
