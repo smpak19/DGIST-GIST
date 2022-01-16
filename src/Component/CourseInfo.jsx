@@ -1,4 +1,3 @@
-
 import {React, useState, useEffect} from "react";
 
 
@@ -43,12 +42,14 @@ function CourseInfo({course, taken, settaken, key}) {
         }
       }
 
-    let style = {
+    let style1 = {
         border: "1px solid black",
-        padding: "20px"
+        border_top : "1px solid black",
+        bgcolor:"black"
     }
     let number = {
-        width : "5rem"
+        width : "5rem",
+        padding : "10px"
     }
     let name = {
         width : "17.5rem"
@@ -63,51 +64,44 @@ function CourseInfo({course, taken, settaken, key}) {
         width : "3.125rem",
         textalign: "center"
     }
+    
+    const [ishover, setishover]=useState(false);
 
-
+    
     return (
-        <label htmlFor={key}>
-        <div style={style}>
-            <table>
-                <td style ={number}>
-                <b> {과목번호} </b>
-                </td>
-                <td style ={name}>
-                    <span> {교과목명}  </span>
-                </td>
-                <td style ={type}>
-                    <span> {이수구분}  </span>
-                </td>
-                <td style ={credit}>
-                    <span>{학점}</span>
-                </td>
-                <td style ={area}>
-                    <span>{교과영역}</span>
-                </td>
-                <td>
+        <tr style={style1}>
+                <td >
                     <input id={key} 
                     type = "checkbox" 
                     onChange={()=>handleCheck()}
                     checked = {checkbox} />
                 </td>
-                <span onMouseOver={() => setishover(true)}
+                <td style ={number}>
+                <b> {과목번호} </b>
+                </td>
+                <td style ={name}>
+                    {교과목명}  
+                </td>
+                <td style ={type}>
+                    {이수구분} 
+                </td>
+                <td style ={credit}>
+                    {학점}
+                </td>
+                <td style ={area}>
+                    {교과영역}
+                </td>
+                <td><span onMouseOver={() => setishover(true)}
                 onMouseOut={() => setishover(false)}>
                     {ishover ? "" : "비고 보기"}
                     {ishover ? 비고 : ""}
-                </span>
-
-            </table>
-            
-            
-            
+                </span></td>
+                            
             {/* <span> {교과분야}  / </span>
             <span> {교과영역}  / </span>
             <span> {학위구분}  / </span>
             <span> {비고} </span> */}
-            
-            
-        </div>
-        </label>
+        </tr>
     )
 }
 
