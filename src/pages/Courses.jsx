@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import CourseInfo from "../Component/CourseInfo";
 import data from "./until19.json"
 import axios from 'axios';
-import {useNavigate, useLocation} from 'react-router-dom'
+import {useNavigate, useLocation, Location} from 'react-router-dom'
 import "./Courses.css"
 
 function Courses( {userId, setId} ) {
@@ -18,12 +18,12 @@ function Courses( {userId, setId} ) {
     useEffect(() => {
         if({userId}.userId === '') {
             setId(window.sessionStorage.getItem('Id'))
+        } else {
+            const b = {userId}.userId
+            axios.get(`http://192.249.18.176:443/user/${b}`).then(result => {
+                setisheard(result.data.taken)
+            })
         }
-        console.log(`userId`, {userId})
-        const b = {userId}.userId
-        axios.get(`http://192.249.18.176:443/user/${b}`).then(result => {
-            setisheard(result.data.taken)
-        })
     }, [userId, setId])
 
     function handleSubmit(e) {
@@ -38,10 +38,12 @@ function Courses( {userId, setId} ) {
         e.preventDefault();
         // console.log('You clicked submit.!!!');
         // console.log(`userId`, {userId}.userId)
-        const a = {userId}.userId
-        axios.get(`http://192.249.18.176:443/user/${a}`).then(result => {
-            setisheard(result.data.taken)
-        })
+        // const a = {userId}.userId
+        // axios.get(`http://192.249.18.176:443/user/${a}`).then(result => {
+        //     console.log(result)
+        //     setisheard(result.data.taken)
+        // })
+        window.location.replace('/courses')
     }
 
 
@@ -72,7 +74,7 @@ function Courses( {userId, setId} ) {
                         {(course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                         item.과목번호.includes(search) ||
                         item.교과목명.includes(search)))
-                        .map((e,i) => (<CourseInfo  key={i} course = {e} taken = {isheard} settaken = {setisheard} />)) }
+                        .map((e,i) => (<CourseInfo  key={i} course = {e} taken = {isheard} settaken = {setisheard}  />)) }
                     </tbody>
                 </table>
             </div>
