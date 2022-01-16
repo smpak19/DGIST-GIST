@@ -50,6 +50,7 @@ function Result( {userId, setId} ) {
 
     function handlelogout() {
         window.sessionStorage.clear()
+        setId('')
     }
 
     return(

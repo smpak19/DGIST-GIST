@@ -1,10 +1,10 @@
-import React from "react";
+import {React, useEffect} from "react";
 import {useNavigate} from "react-router-dom"
 
 
 let anslist = []
 
-function Survey( {userId} ) {
+function Survey( {userId, setId} ) {
 
     console.log(`userId`, {userId})
     const survey = {
@@ -17,7 +17,13 @@ function Survey( {userId} ) {
     const handleClick = (text) => {
         anslist.push(text)
         nav("/courses", {state: text})
-    } 
+    }
+    
+    useEffect(() => {
+        if({userId}.userId === '') {
+            setId(window.sessionStorage.getItem('Id'))
+        }
+    }, [setId, userId]);
    
    return(
         <>
@@ -35,8 +41,8 @@ function Survey( {userId} ) {
                         </h1>
                     </div>
                     <div className="Answer">
-                            {survey.answers.map((ans) => 
-                            <button value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
+                            {survey.answers.map((ans, i) => 
+                            <button key={i} value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
                     </div>
                 </div>
             </div>
