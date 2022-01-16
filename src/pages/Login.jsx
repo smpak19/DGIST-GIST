@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React from 'react';
-import {Link, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import './Login.css';
 
 
-function Login( {getId, getnum} ) {
+function Login( {getId} ) {
 	const nav = useNavigate();
 	const REST_API_KEY = "a77e93ca6119c6cecfe89bad506f9e1b";
 	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
@@ -13,14 +13,19 @@ function Login( {getId, getnum} ) {
 	function handleClick(e) {
 		e.preventDefault();
 		var json = {id: e.target.id.value, pw: e.target.pw.value};
-		axios.post('http://192.249.18.176:443/login', json).then( res => {
+
+		axios.post('http://192.249.18.176:443/kakao', json).then( res => {
 			// console.log(`res.data`, res.data)
 			if( res.data === "courses"){
 				getId(e.target.id.value)
+				window.sessionStorage.setItem('Id', e.target.id.value);
+				window.sessionStorage.setItem('Provider', 'Normal')
 				nav("/result")
 			}
 			if( res.data === "correct"){
 				getId(e.target.id.value)
+				window.sessionStorage.setItem('Id', e.target.id.value);
+				window.sessionStorage.setItem('Provider', 'Normal')
 				nav("/survey")
 			}
 		});

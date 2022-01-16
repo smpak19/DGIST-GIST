@@ -1,60 +1,39 @@
-import axios from 'axios';
-import React, { useEffect, useState, useCallback } from 'react';
-const Profile = () => {
-  const [userId, setUserId] = useState();
-  const [nickName, setNickName] = useState();
+import {Link} from 'react-router-dom'
+import React, { useEffect } from 'react';
 
-  const getProfile = async () => {
-    try {
-      let data = await window.Kakao.API.request({
-        url: '/v2/user/me',
-        success: function(response) {
-        }, fail: function(err) {
-        console.log(err)
-      }
-    });
-    setUserId(data.id);
-    setNickName(data.properties.nickname);
-    } catch (err) {
-      console.log(err);
+function Profile({userId, setId}) {
+
+    function handlelogout() {
+        window.sessionStorage.clear()
+        setId('')
     }
-  };
 
-  const sendProfile = useCallback(async () => {
-    try{
-      let data = await window.Kakao.API.request({
-        url: '/v2/user/me',
-        success: function(response) {
-        }, fail: function(err) {
-          console.log(err)
+    useEffect(() => {
+        if({userId}.userId === '') {
+            setId(window.sessionStorage.getItem('Id'))
         }
-      });
-      setUserId(data.id);
-      setNickName(data.properties.nickname);
-      const json = {"id":userId, "name": nickName};
-      axios.post('/user', json) // 주소 적기
-      .then( function(response){
-        console.log(response);
-      })
-      .catch( function(error) {
-        console.log(error);
-      })
-    } catch (err) {
-      console.log(err);
-    }
-  }, [nickName, userId]);
+    }, [setId, userId]);
 
-  useEffect(() => {
-    getProfile();
-    sendProfile();
-  }, [sendProfile]);
-  return (
-    <div>
 
-      <h1>hello</h1>
-      <h2>{userId}</h2>
-      <h2>{nickName}</h2>
-    </div>
-  );
-};
+    return (
+     <div>
+        <div>
+            <Link to="/">
+                <button onClick={() => handlelogout()}>Logout</button>
+            </Link>
+            <Link to="/courses">
+                <button>Edit lecture list</button>
+            </Link>
+            <Link to="/result">
+                <button>Back to result</button>
+            </Link> 
+            </div>
+        <h1>hello, {userId}, from {window.sessionStorage.getItem('Provider')}</h1>
+     </div> 
+    )
+}
+
+
+
+
 export default Profile;
