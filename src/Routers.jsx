@@ -18,10 +18,10 @@ function Routers() {
             <Route path ="/" element={<Main/>} />
             <Route path ="/login" element = {<Login getId={setUserId} />} />
             <Route path ="/courses" element = {<Courses userId = {userId} setId={setUserId} />} />
-            <Route path ="/survey" element = {<Survey userId = {userId} />}/>
+            <Route path ="/survey" element = {<Survey userId = {userId} setId={setUserId} />}/>
             <Route path = "/result" element= {<Result userId = {userId} setId={setUserId} />} /> 
-            <Route path = '/oauth/kakao/callback' element = {<Auth/>}/>
-            <Route path = '/profile' element = {<Profile/>}/>
+            <Route path = '/oauth/kakao/callback' element = {<Auth userId = {userId} setId={setUserId}/>}/>
+            <Route path = '/profile' element = {<Profile userId = {userId} setId={setUserId}/>}/>
             <Route path = '/register' element = {<Register/>}/> 
         </Routes>
         </div>
