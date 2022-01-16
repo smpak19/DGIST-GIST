@@ -1,4 +1,6 @@
 import {React, useState, useEffect} from "react";
+import { defaultWidth } from "survey-react";
+import "./CourseInfo.css"
 
 
 function CourseInfo({course, taken, settaken}) {
@@ -9,11 +11,7 @@ function CourseInfo({course, taken, settaken}) {
     // let takenthiscourse = false; 
     useEffect(() => {
         takencourse.forEach((e)=>{
-            // if(e.과목번호 == 과목번호)
-            //     console.log(e.과목번호, 과목번호)
             if(e.과목번호 === 과목번호) {
-                // console.log(`hello`)
-                // takenthiscourse = true;
                 setcheckbox(true)
             }
         })
@@ -42,62 +40,35 @@ function CourseInfo({course, taken, settaken}) {
         }
       }
 
-    let style1 = {
-        border: "1px solid black",
-        border_top : "1px solid black",
-        bgcolor:"black"
-    }
-    let number = {
-        width : "5rem",
-        padding : "10px"
-    }
-    let name = {
-        width : "17.5rem"
-    }
-    let type = {
-        width : "4.375rem"
-    }
-    let area = {
-        width : "6.25rem"
-    }
-    let credit = {
-        width : "3.125rem",
-        textalign: "center"
-    }
 
-    
     return ( 
-        <tr style={style1} onClick={() => handleCheck()}>
-                <td >
+        <tr  className="style1" onClick={() => handleCheck()}>
+                <td>
                     <input type = "checkbox" 
                     onChange={() => 1}
                     checked = {checkbox} />
                 </td>
-                <td style ={number}>
+                <td className="number">
                 <b> {과목번호} </b>
                 </td>
-                <td style ={name}>
+                <td className = "name">
                     {교과목명}  
                 </td>
-                <td style ={type}>
+                <td className = "type">
                     {이수구분} 
                 </td>
-                <td style ={credit}>
+                <td className = "credit">
                     {학점}
                 </td>
-                <td style ={area}>
+                <td className = "area">
                     {교과영역}
                 </td>
-                <td><span onMouseOver={() => setishover(true)}
+                <td className = "space">
+                    <span onMouseOver={() => setishover(true)}
                 onMouseOut={() => setishover(false)}>
                     {ishover ? "" : "비고 보기"}
                     {ishover ? 비고 : ""}
                 </span></td>
-                            
-            {/* <span> {교과분야}  / </span>
-            <span> {교과영역}  / </span>
-            <span> {학위구분}  / </span>
-            <span> {비고} </span> */}
         </tr>
        
         
