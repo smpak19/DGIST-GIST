@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Link, useNavigate} from "react-router-dom"
 
 
-function Login( {getId} ) {
+function Login( {getId, getnum} ) {
 	const nav = useNavigate();
 	const REST_API_KEY = "a77e93ca6119c6cecfe89bad506f9e1b";
 	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
@@ -16,8 +16,12 @@ function Login( {getId} ) {
 		e.preventDefault();
 		var json = {id: e.target.id.value, pw: e.target.pw.value};
 		axios.post('http://192.249.18.176:443/login', json).then( res => {
-			console.log(res.data )
-			if( res.data == 'correct'){
+			// console.log(`res.data`, res.data)
+			if( res.data === "courses"){
+				getId(e.target.id.value)
+				nav("/result")
+			}
+			if( res.data === "correct"){
 				getId(e.target.id.value)
 				nav("/survey")
 			}

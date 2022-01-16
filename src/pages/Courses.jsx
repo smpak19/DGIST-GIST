@@ -19,14 +19,15 @@ function Courses( {userId} ) {
         console.log(`userId`, {userId})
         const b = {userId}.userId
         axios.get(`http://192.249.18.176:443/user/${b}`).then(result => {
-            setisheard(result.data)
+            setisheard(result.data.taken)
         })
     }, [])
 
     function handleSubmit(e) {
         e.preventDefault();
-        nav("/result", {state: {arr: isheard, num: loc.state}})
-        axios.post("http://192.249.18.176:443/user", {userid : {userId} , taken : {isheard}});
+        let SI = loc.state
+        nav("/result", {state: {arr: isheard, num: SI}})
+        axios.post("http://192.249.18.176:443/user", {userid : {userId} , taken : {isheard}, SI: {SI}});
     }
 
 
@@ -36,17 +37,45 @@ function Courses( {userId} ) {
         // console.log(`userId`, {userId}.userId)
         const a = {userId}.userId
         axios.get(`http://192.249.18.176:443/user/${a}`).then(result => {
-            setisheard(result.data)
+            setisheard(result.data.taken)
         })
     }
-
-      const boxstyle = {
+    let style = {
+        border: "1px solid black",
+        padding: "20px"
+    }
+    const boxstyle = {
         width : "90%",
-        height : "30rem",
+        height : "32rem",
         margin : "0 auto",
         overflow: "auto",
         border: "1px solid black"
     }
+    const headstyle = {
+        width : "90%",
+        height : "2rem",
+        margin : "0 auto",
+        overflow: "auto",
+        
+    }
+    
+    let number = {
+        width : "5rem"
+    }
+    let name = {
+        width : "17.5rem"
+    }
+    let type = {
+        width : "4.375rem"
+    }
+    let area = {
+        width : "6.25rem"
+    }
+    let credit = {
+        width : "3.125rem",
+        textalign: "center"
+    }
+
     return (
         
         <div>
@@ -56,6 +85,29 @@ function Courses( {userId} ) {
                 }}/>
                 <button>Search</button>
             </div>
+            <div style = {headstyle}>
+                <table >
+                    <tr style = {style}>
+                            <th style = {number}>
+                            <b> 과목번호 </b>
+                            </th>
+                            <th style = {name}>
+                                <span> 교과목명  </span>
+                            </th>
+                            <th style = {type}>
+                                <span> 이수구분  </span>
+                            </th>
+                            <th style = {credit}>
+                                <span>학점</span>
+                            </th>
+                            <th style ={area}>
+                                <span> 교과 영역 </span> 
+                            </th>
+                    </tr>
+                </table>
+            </div>
+            
+            
             <div style={boxstyle}>
                 { (course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                      item.과목번호.includes(search) ||
