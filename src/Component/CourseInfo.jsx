@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from "react";
 
 
-function CourseInfo({course, taken, settaken}, key) {
+function CourseInfo({course, taken, settaken}) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
@@ -64,16 +64,13 @@ function CourseInfo({course, taken, settaken}, key) {
         width : "3.125rem",
         textalign: "center"
     }
-    
-    const [ishover, setishover]=useState(false);
 
     
-    return (
-        <tr style={style1}>
+    return ( 
+        <tr style={style1} onClick={() => handleCheck()}>
                 <td >
-                    <input id={key} 
-                    type = "checkbox" 
-                    onChange={()=>handleCheck()}
+                    <input type = "checkbox" 
+                    onChange={() => 1}
                     checked = {checkbox} />
                 </td>
                 <td style ={number}>
@@ -102,6 +99,8 @@ function CourseInfo({course, taken, settaken}, key) {
             <span> {학위구분}  / </span>
             <span> {비고} </span> */}
         </tr>
+       
+        
     )
 }
 

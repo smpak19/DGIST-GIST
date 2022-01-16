@@ -42,23 +42,13 @@ function Courses( {userId, setId} ) {
             setisheard(result.data.taken)
         })
     }
-    let style = {
-        border: "1px solid black",
-        padding: "20px"
-    }
+
     const boxstyle = {
         width : "90%",
         height : "32rem",
         margin : "0 auto",
         overflow: "auto",
         border: "1px solid black",
-    }
-    const headstyle = {
-        width : "90%",
-        height : "2rem",
-        margin : "0 auto",
-        overflow: "auto",
-        
     }
     
     let number = {
@@ -90,8 +80,8 @@ function Courses( {userId, setId} ) {
                 }}/>
                 <button>Search</button>
             </div>
-            <div >
-                <table style={boxstyle}>
+            <div style={boxstyle}> 
+                <table> 
                     <thead>
                         <tr>
                             <td style = {space}></td>
@@ -102,7 +92,7 @@ function Courses( {userId, setId} ) {
                             <td style ={area}><span> 교과 영역 </span> </td>
                         </tr>
                     </thead>
-                    <tbody className='style'>
+                    <tbody >
                     {(course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                         item.과목번호.includes(search) ||
                         item.교과목명.includes(search)))
