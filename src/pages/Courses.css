@@ -1,0 +1,38 @@
+.boxstyle{
+    width : 90%;
+    height : 90%;
+    margin : 0 auto;
+    overflow: auto;
+    /* border: 1px solid black; */
+}
+/* .bodystyle{
+    border: 1px solid black; */
+/* } */
+.entiretable{
+    width : 100%;
+    border: 1px solid black;
+    border-collapse: collapse
+}
+.space{
+    width : 1rem;
+}
+.number {
+    width : 2rem;
+    padding : 10px;
+}
+.name {
+    width : 5rem;
+}
+.type {
+    width : 3rem;
+}
+.area {
+    width : 3rem;
+}
+.credit {
+    width : 3.125rem;
+    text-align: center;
+}
+.bigo {
+    width : 10rem;
+}
