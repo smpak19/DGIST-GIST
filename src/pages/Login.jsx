@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import {Link, useNavigate} from "react-router-dom"
 
 
@@ -9,15 +9,12 @@ function Login( {getId} ) {
 	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
-	const [id, setId] = useState('');
-	const [pw, setPw] = useState('');
-
 	function handleClick(e) {
 		e.preventDefault();
 		var json = {id: e.target.id.value, pw: e.target.pw.value};
 		axios.post('http://192.249.18.176:443/login', json).then( res => {
 			console.log(res.data )
-			if( res.data == 'correct'){
+			if( res.data === 'correct'){
 				getId(e.target.id.value)
 				nav("/survey")
 			}
