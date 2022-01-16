@@ -4,7 +4,9 @@ import {useNavigate} from "react-router-dom"
 
 let anslist = []
 
-function Survey() {
+function Survey( {userId} ) {
+
+    console.log(`userId`, {userId})
    const survey = {
     id: 1,
     question: "학번을 선택해주세요.",
@@ -23,6 +25,7 @@ function Survey() {
                <div className="Quiz">
                 <h1>
                     <span>{survey.id}</span>
+                    <span>{userId}</span>
                 </h1>
                 <h1>
                     {survey.question}
