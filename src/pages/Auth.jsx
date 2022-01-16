@@ -33,7 +33,7 @@ const Auth = () => {
       }
     };
     getToken();
-  }, []);
+  }, [navigate]);
   return null;
 };
 export default Auth;

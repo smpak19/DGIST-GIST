@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import {Link, useNavigate} from "react-router-dom"
 
 
@@ -8,9 +8,6 @@ function Login( {getId, getnum} ) {
 	const REST_API_KEY = "a77e93ca6119c6cecfe89bad506f9e1b";
 	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
-	const [id, setId] = useState('');
-	const [pw, setPw] = useState('');
 
 	function handleClick(e) {
 		e.preventDefault();

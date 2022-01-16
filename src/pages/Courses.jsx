@@ -21,7 +21,7 @@ function Courses( {userId} ) {
         axios.get(`http://192.249.18.176:443/user/${b}`).then(result => {
             setisheard(result.data.taken)
         })
-    }, [])
+    }, [userId])
 
     function handleSubmit(e) {
         e.preventDefault();

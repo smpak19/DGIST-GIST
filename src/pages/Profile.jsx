@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 const Profile = () => {
   const [userId, setUserId] = useState();
   const [nickName, setNickName] = useState();
@@ -20,7 +20,7 @@ const Profile = () => {
     }
   };
 
-  const sendProfile = async () => {
+  const sendProfile = useCallback(async () => {
     try{
       let data = await window.Kakao.API.request({
         url: '/v2/user/me',
@@ -42,12 +42,12 @@ const Profile = () => {
     } catch (err) {
       console.log(err);
     }
-  };
-  
+  }, [nickName, userId]);
+
   useEffect(() => {
     getProfile();
     sendProfile();
-  }, []);
+  }, [sendProfile]);
   return (
     <div>
 

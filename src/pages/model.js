@@ -19,7 +19,7 @@ function ratio19(arr) {
         // console.log(`학점 `, arr[i].학점 )
         if(arr[i].이수구분 === '교선필수') {
             gyo += arr[i].학점
-            if (arr[i].교과분야 == "인문소양"){
+            if (arr[i].교과분야 === "인문소양"){
                 lit += arr[i].학점
             }
         } else {
@@ -45,7 +45,7 @@ function ratio19(arr) {
                 leader += arr[i].학점
             } else if(['HL103','HL104', 'HL105', 'HL106'].includes(name)){
                 music += arr[i].학점
-            } else if(arr[i].교과분야 == "인문소양") {
+            } else if(arr[i].교과분야 === "인문소양") {
                 lit += arr[i].학점
             }
 

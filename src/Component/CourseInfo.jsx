@@ -12,13 +12,13 @@ function CourseInfo({course, taken, settaken,index}) {
         takencourse.forEach((e)=>{
             // if(e.과목번호 == 과목번호)
             //     console.log(e.과목번호, 과목번호)
-            if(e.과목번호 == 과목번호) {
+            if(e.과목번호 === 과목번호) {
                 // console.log(`hello`)
                 // takenthiscourse = true;
                 setcheckbox(true)
             }
         })
-    }, [taken])
+    }, [takencourse, 과목번호])
 
     
 

@@ -39,10 +39,10 @@ function Result( {userId, usernum} ) {
             txt.map((item, i) =>
                 <div>
                     <h2>
-                        {item} {arr[i]}학점 이수, {res[i] - arr[i]}학점 부족
+                        {item} {arr[i]}학점 이수, {(res[i] - arr[i] >= 0)? res[i] - arr[i] : 0}학점 부족
                     </h2>
                     <progress value = {arr[i]/ res[i]} max = "1"></progress>
-                    <span> {arr[i]*100/res[i]}% 이수</span>
+                    <span> {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)}% 이수</span>
                 </div>
             )
         )}
