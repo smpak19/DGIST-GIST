@@ -18,6 +18,7 @@ function Register() {
 
         if(e.target.pw.value == e.target.rpw.value){
             var json = {id: e.target.id.value, pw: e.target.pw.value};
+
 		    axios.post('http://192.249.18.176:443/register', json).then((res) =>{
                 if(res.data == "duplicated ID"){
                     window.alert('duplicated ID');
@@ -27,6 +28,7 @@ function Register() {
                     console.log(res.data)
                 }
             });
+
         }
         else{
             window.alert('wrong password');
@@ -35,6 +37,7 @@ function Register() {
   }
   return (
     <>
+
       <h1>Register</h1>
 			<form onSubmit={handleClick}>
 				<div>
