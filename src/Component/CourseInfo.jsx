@@ -1,9 +1,8 @@
-
 import {React, useState, useEffect} from "react";
 import { defaultWidth } from "survey-react";
 
 
-function CourseInfo({course, taken, settaken,index}) {
+function CourseInfo({course, taken, settaken, key}) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
@@ -12,13 +11,13 @@ function CourseInfo({course, taken, settaken,index}) {
         takencourse.forEach((e)=>{
             // if(e.과목번호 == 과목번호)
             //     console.log(e.과목번호, 과목번호)
-            if(e.과목번호 == 과목번호) {
+            if(e.과목번호 === 과목번호) {
                 // console.log(`hello`)
                 // takenthiscourse = true;
                 setcheckbox(true)
             }
         })
-    }, [taken])
+    }, [takencourse, 과목번호])
 
     
 
@@ -58,11 +57,20 @@ function CourseInfo({course, taken, settaken,index}) {
         width : "3.125rem",
         textalign: "center"
     }
+    
+    const [ishover, setishover]=useState(false);
 
-
+    
     return (
+        <label htmlFor={key}>
         <div style={style}>
             <table>
+                <td>
+                    <input id={key} 
+                    type = "checkbox" 
+                    onChange={()=>handleCheck()}
+                    checked = {checkbox} />
+                </td>
                 <td style ={number}>
                 <b> {과목번호} </b>
                 </td>
@@ -78,12 +86,13 @@ function CourseInfo({course, taken, settaken,index}) {
                 <td style ={area}>
                     <span>{교과영역}</span>
                 </td>
-                <td>
-                    <input 
-                    type = "checkbox" 
-                    onChange={()=>handleCheck()}
-                    checked = {checkbox} />
-                </td>
+                
+                <span onMouseOver={() => setishover(true)}
+                onMouseOut={() => setishover(false)}>
+                    {ishover ? "" : "비고 보기"}
+                    {ishover ? 비고 : ""}
+                </span>
+                
 
             </table>
             
@@ -96,6 +105,7 @@ function CourseInfo({course, taken, settaken,index}) {
             
             
         </div>
+        </label>
     )
 }
 

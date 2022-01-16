@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect} from 'react';
 import CourseInfo from "../Component/CourseInfo";
 import data from "./until19.json"
@@ -21,7 +20,7 @@ function Courses( {userId} ) {
         axios.get(`http://192.249.18.176:443/user/${b}`).then(result => {
             setisheard(result.data.taken)
         })
-    }, [])
+    }, [userId])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -112,7 +111,7 @@ function Courses( {userId} ) {
                 { (course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                      item.과목번호.includes(search) ||
                      item.교과목명.includes(search)))
-                     .map(e => (<CourseInfo course = {e} taken = {isheard} settaken = {setisheard} />)) }
+                     .map((e,i) => (<CourseInfo key={i} course = {e} taken = {isheard} settaken = {setisheard} />)) }
              </div>
              <div>
                 <form onSubmit={handleSubmit} >
