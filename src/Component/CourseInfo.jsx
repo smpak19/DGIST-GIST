@@ -1,12 +1,12 @@
 
 import {React, useState, useEffect} from "react";
-import { defaultWidth } from "survey-react";
 
 
 function CourseInfo({course, taken, settaken, key}) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
+    const [ishover, setishover]=useState(false);
     // let takenthiscourse = false; 
     useEffect(() => {
         takencourse.forEach((e)=>{
@@ -85,6 +85,11 @@ function CourseInfo({course, taken, settaken, key}) {
                     onChange={()=>handleCheck()}
                     checked = {checkbox} />
                 </td>
+                <span onMouseOver={() => setishover(true)}
+                onMouseOut={() => setishover(false)}>
+                    {ishover ? "" : "비고 보기"}
+                    {ishover ? 비고 : ""}
+                </span>
 
             </table>
             

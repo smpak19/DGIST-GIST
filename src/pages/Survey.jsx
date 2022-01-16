@@ -7,7 +7,7 @@ let anslist = []
 function Survey( {userId} ) {
 
     console.log(`userId`, {userId})
-   const survey = {
+    const survey = {
     id: 1,
     question: "학번을 선택해주세요.",
     answers: [{text: "14"} ,{text: "15"} ,{text: "16"}, {text: "17"}, {text: "18"}, {text: "19"}]
