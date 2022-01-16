@@ -3,10 +3,11 @@ import { defaultWidth } from "survey-react";
 import "./CourseInfo.css"
 
 
-function CourseInfo({course, taken, settaken, key}) {
+function CourseInfo({course, taken, settaken}) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
+    const [ishover, setishover]=useState(false);
     // let takenthiscourse = false; 
     useEffect(() => {
         takencourse.forEach((e)=>{
@@ -39,16 +40,12 @@ function CourseInfo({course, taken, settaken, key}) {
         }
       }
 
-    const [ishover, setishover]=useState(false);
 
-    
-    return (
-        <tr className="style1">
+    return ( 
+        <tr  className="style1" onClick={() => handleCheck()}>
                 <td>
-                    <input 
-                    id={key} 
-                    type = "checkbox" 
-                    onChange={()=>handleCheck()}
+                    <input type = "checkbox" 
+                    onChange={() => 1}
                     checked = {checkbox} />
                 </td>
                 <td className="number">
@@ -73,6 +70,8 @@ function CourseInfo({course, taken, settaken, key}) {
                     {ishover ? 비고 : ""}
                 </span></td>
         </tr>
+       
+        
     )
 }
 

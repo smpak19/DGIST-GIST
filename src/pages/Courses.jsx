@@ -5,7 +5,7 @@ import axios from 'axios';
 import {useNavigate, useLocation} from 'react-router-dom'
 import "./Courses.css"
 
-function Courses( {userId} ) {
+function Courses( {userId, setId} ) {
     // const [courses, setcourse] = useState([{courseId : 'cse496', courseName : '몰입캠프'}, {courseId : 'cse123', courseName : '데이터 구조'}, {courseId : 'cse234', courseName : '운영체제'}])
     // 전체 과목
     const course = data
@@ -16,12 +16,15 @@ function Courses( {userId} ) {
     const loc = useLocation()
     
     useEffect(() => {
+        if({userId}.userId === '') {
+            setId(window.sessionStorage.getItem('Id'))
+        }
         console.log(`userId`, {userId})
         const b = {userId}.userId
         axios.get(`http://192.249.18.176:443/user/${b}`).then(result => {
             setisheard(result.data.taken)
         })
-    }, [userId])
+    }, [userId, setId])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -40,6 +43,7 @@ function Courses( {userId} ) {
             setisheard(result.data.taken)
         })
     }
+
 
 
     return (
