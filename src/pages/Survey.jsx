@@ -25,7 +25,6 @@ function Survey( {userId} ) {
                <div className="Quiz">
                 <h1>
                     <span>{survey.id}</span>
-                    <span>{userId}</span>
                 </h1>
                 <h1>
                     {survey.question}

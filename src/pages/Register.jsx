@@ -9,9 +9,9 @@ function Register() {
 	function handleClick(e) {
 		e.preventDefault();
     
-		console.log(e.target.id.value);
-        console.log(e.target.pw.value);
-        console.log(e.target.rpw.value);
+		// console.log(e.target.id.value);
+        // console.log(e.target.pw.value);
+        // console.log(e.target.rpw.value);
 
         if(e.target.pw.value === e.target.rpw.value){
             var json = {id: e.target.id.value, pw: e.target.pw.value};
@@ -22,7 +22,7 @@ function Register() {
                 }
                 else{
                     nav("/login", {id: e.target.id.value, pw: e.target.pw.value})
-                    console.log(res.data)
+                    // console.log(res.data)
                 }
             });
 

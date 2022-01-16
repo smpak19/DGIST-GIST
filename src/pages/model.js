@@ -1,5 +1,5 @@
 
-function ratio19(arr, num) {
+function ratio19(arr) {
     let gyo = 0
     let gong = 0
     let math = 0
