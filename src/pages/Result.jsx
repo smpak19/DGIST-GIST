@@ -2,6 +2,7 @@ import {React,useState,useEffect, useCallback} from "react";
 import {useLocation, Link} from 'react-router-dom'
 import { ratio19, getlimit } from './model.js'
 import axios from 'axios';
+import './Result.css';
 
 function Result( {userId, usernum} ) {
     let txt = ["공통필수", "교선필수", "수학", "물리", "화학", "생물", "컴퓨터, 자동제어, 통계, 디자인공학", "융복합(UGRP, 기타)", "영어", "리더십", "음악, 체육", "인문사회, 기술경영"]
@@ -37,31 +38,42 @@ function Result( {userId, usernum} ) {
     function mklst() {
         return( 
             txt.map((item, i) =>
-                <div>
-                    <h2>
+                <div className="resulttable">
+                    <div className="resultitem">
                         {item} {arr[i]}학점 이수, {(res[i] - arr[i] >= 0)? res[i] - arr[i] : 0}학점 부족
-                    </h2>
-                    <progress value = {arr[i]/ res[i]} max = "1"></progress>
-                    <span> {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)}% 이수</span>
+                    </div>
+                    <div>
+                        <progress value = {arr[i]/ res[i]} max = "1"></progress>
+                        <span> {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)}% 이수</span>
+                    </div>
                 </div>
             )
         )}
 
     return(
-        <div> 
+        <>
+            <div className="top"/>
+            <div className="domain">수강 신청 결과</div>
             <div>
-                <Link to="/">
-                    <button>Logout</button>
-                </Link>
-                <Link to="/courses">
-                    <button>Edit lecture list</button>
-                </Link>
-                <Link to="/profile">
-                    <button>User Info</button>
-                </Link>
+                <div className="buttongroup">
+                    <div>
+                        <Link to="/courses">
+                            <button>수강 내역 수정</button>
+                        </Link>
+                        <Link to="/profile">
+                            <button>유저 정보</button>
+                        </Link>
+                    </div>
+                    <Link to="/">
+                            <button className="logoutbutton">로그아웃</button>
+                    </Link>
+                </div>
             </div>
-            {mklst()}
-        </div>
+
+            <div className="resultbody">
+                {mklst()}
+            </div>
+        </>
     )
 }
 

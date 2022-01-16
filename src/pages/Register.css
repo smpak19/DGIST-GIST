@@ -1,0 +1,26 @@
+.registerbody {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerparent {
+  display: flex;
+  /* height: 20vh; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerchild {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerbutton {
+  height: 72px;
+}
