@@ -3,7 +3,7 @@ import {React, useState, useEffect} from "react";
 import { defaultWidth } from "survey-react";
 
 
-function CourseInfo({course, taken, settaken,index}) {
+function CourseInfo({course, taken, settaken, key}) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
@@ -61,6 +61,7 @@ function CourseInfo({course, taken, settaken,index}) {
 
 
     return (
+        <label htmlFor={key}>
         <div style={style}>
             <table>
                 <td style ={number}>
@@ -79,7 +80,7 @@ function CourseInfo({course, taken, settaken,index}) {
                     <span>{교과영역}</span>
                 </td>
                 <td>
-                    <input 
+                    <input id={key} 
                     type = "checkbox" 
                     onChange={()=>handleCheck()}
                     checked = {checkbox} />
@@ -96,6 +97,7 @@ function CourseInfo({course, taken, settaken,index}) {
             
             
         </div>
+        </label>
     )
 }
 
