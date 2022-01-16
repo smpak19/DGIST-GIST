@@ -12,24 +12,25 @@ function Result( {userId, setId} ) {
     const [res, setRes] = useState([]) 
     
     const getdata = useCallback((() => {
-        if (location.state === null){
-            if({userId}.userId === '') {
-                setId(window.sessionStorage.getItem('Id'))
+        if({userId}.userId === '') {
+            let newid = window.sessionStorage.getItem('Id')
+            setId(newid)
+        } else {
+            if (location.state === null){
+                axios.get(`http://192.249.18.176:443/user/${userId}`).then((result) => {
+                    // await console.log("result data", result.data)
+                    // console.log(`data`, data)
+                    // arr = ratio19(data, 19)
+                    setArr(ratio19(result.data.taken))
+                    setRes(getlimit(result.data.SI))
+                    // mklst()
+                }).catch((err) => console.log(err))
             }
-            console.log(123123, userId)
-            axios.get(`http://192.249.18.176:443/user/${userId}`).then((result) => {
-                // await console.log("result data", result.data)
-                // console.log(`data`, data)
-                // arr = ratio19(data, 19)
-                setArr(ratio19(result.data.taken))
-                setRes(getlimit(result.data.SI))
-                // mklst()
-            }).catch((err) => console.log(err))
-        }
-        else {
-            setArr(ratio19(location.state.arr))
-            setRes(getlimit(location.state.num))
-        }
+            else {
+                setArr(ratio19(location.state.arr))
+                setRes(getlimit(location.state.num))
+            }
+        } 
     }), [location.state, userId, setId])
     
     useEffect(() => {

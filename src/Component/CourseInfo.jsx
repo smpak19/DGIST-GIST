@@ -1,35 +1,32 @@
 import {React, useState, useEffect} from "react";
-import { defaultWidth } from "survey-react";
 import "./CourseInfo.css"
 
 
 function CourseInfo({course, taken, settaken}) {
-    const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
+    const {과목번호,교과목명,이수구분,교과영역,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
-    const [ishover, setishover]=useState(false);
+    const [ishover, setishover]= useState(false);
+    const [isLoaded, setLoad] = useState(false);
+
     // let takenthiscourse = false; 
     useEffect(() => {
-        takencourse.forEach((e)=>{
-            if(e.과목번호 === 과목번호) {
-                setcheckbox(true)
-            }
-        })
-    }, [takencourse, 과목번호])
-
-    let takenthiscourse = false; 
-    takencourse.forEach((e)=>{
-        if(e === course) takenthiscourse = true;
-    })
-
-    
+        if(!isLoaded) {
+            takencourse.forEach((e)=>{
+                if(e.과목번호 === 과목번호) {
+                    setcheckbox(true)
+                    setLoad(true) 
+                }
+            })
+        } 
+     }
+    , [takencourse, 과목번호, isLoaded]) 
 
     function handleCheck(e) {
-        
         console.log('You clicked submit.');
         if(checkbox){
             setcheckbox(false)
-            settaken(taken.filter(tkn => tkn !== course))
+            settaken(taken.filter(tkn => tkn.과목번호 !== course.과목번호))
             console.log(taken)
         }
         else {
