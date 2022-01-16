@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import {Link, useNavigate} from "react-router-dom"
+import './Login.css';
 
 
 function Login( {getId} ) {
@@ -9,14 +10,11 @@ function Login( {getId} ) {
 	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
-	const [id, setId] = useState('');
-	const [pw, setPw] = useState('');
-
 	function handleClick(e) {
 		e.preventDefault();
 		var json = {id: e.target.id.value, pw: e.target.pw.value};
 		axios.post('http://192.249.18.176:443/login', json).then( res => {
-			console.log(res.data )
+			console.log(res.data)
 			if( res.data == 'correct'){
 				getId(e.target.id.value)
 				nav("/survey")
@@ -24,27 +22,27 @@ function Login( {getId} ) {
 		});
   }
   return (
-    <>
-      <h1>login</h1>
+	<>
+		<div className='top'/>
+		<div className='domain'>로그인</div>
+		<div className='loginbody'>
 			<form onSubmit={handleClick}>
-				<div>
-					<label>ID : </label>
-					<input name="id" type = "text"  placeholder='user ID' required/>
-				</div>
-				<div>
-					<label>PW : </label>
-					<input name="pw" type = "password" placeholder='password' required/>
-				</div>
-				<button type="submit">로그인</button>
-				<Link to = "/register">
-				<button type='submit'>회원가입</button>
-				</Link>
-				<div>
-					<a href={KAKAO_AUTH_URL}>Kakao Login</a>
+				<div className='loginparent'>
+					<div className='loginchild'> 
+						<div>
+							<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+						</div>
+						<div>
+							<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
+						</div>
+					</div>
+					<button className='loginbutton' type="submit">로그인</button>
 				</div>
 			</form>
-      </>
-    
+			<div><a href={KAKAO_AUTH_URL}>카카오톡으로 로그인하기</a></div>
+			<div><a href="/register">회원가입</a></div>
+		</div>
+	</>
   );
 }
 

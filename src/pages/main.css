@@ -1,47 +1,26 @@
-.Header {
-    position:fixed;
-    left:0px;
-    top:0px;
-    height:60px;
-    width:100%;
-    background:#35acff;
-    color: white;
-    text-align: center;
+.top {
+  min-height: 50px;
 }
 
-.Footer {
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height:60px;
-    width:100%;
-    background:#35acff;
-    color: white;
+.domain {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.Body {
-    width: 100%;
-    height: 100vh;
-    background-image: url("../../public/src2.jpg");
-    background-size: cover;
+.mainbody {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.Body button {
-    width:200px;
-    height:100px;
-    text-align: center;
-    border-radius: 10px;
-    border: 3px solid green;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    bottom: 20%;
-    transform: translate(-50%, -50%);
+.start {
+  display: flex;
+  justify-content: center;
 }
 
-.Body h1 {
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    transform: translate(-50%, -50%); 
+.editor {
+  text-align: center;
 }
