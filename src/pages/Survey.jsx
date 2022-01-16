@@ -20,22 +20,27 @@ function Survey( {userId} ) {
     } 
    
    return(
-       <div>
-           <div>
-               <div className="Quiz">
-                <h1>
-                    <span>{survey.id}</span>
-                </h1>
-                <h1>
-                    {survey.question}
-                </h1>
-               </div>
-               <div className="Answer">
-                    {survey.answers.map((ans) => 
-                    <button key={ans.text}  value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
-               </div>
-           </div>
-       </div>
+        <>
+            <div className="top"/>
+            <div className="domain">Survey</div>
+            <div>
+                <div>
+                    <div>
+                        <h1>
+                            <span>{survey.id}</span>
+                            <span>{userId}</span>
+                        </h1>
+                        <h1>
+                            {survey.question}
+                        </h1>
+                    </div>
+                    <div className="Answer">
+                            {survey.answers.map((ans) => 
+                            <button value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
+                    </div>
+                </div>
+            </div>
+        </>
    ) 
 }
 

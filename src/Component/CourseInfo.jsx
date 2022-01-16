@@ -20,14 +20,19 @@ function CourseInfo({course, taken, settaken, key}) {
         })
     }, [takencourse, 과목번호])
 
+    let takenthiscourse = false; 
+    takencourse.forEach((e)=>{
+        if(e === course) takenthiscourse = true;
+    })
+
     
 
-    // const [checkbox, setcheckbox] = useState(takenthiscourse);
-
     function handleCheck(e) {
+        
+        console.log('You clicked submit.');
         if(checkbox){
             setcheckbox(false)
-            settaken(taken.filter(tkn => tkn.과목번호 !== course.과목번호))
+            settaken(taken.filter(tkn => tkn !== course))
             console.log(taken)
         }
         else {

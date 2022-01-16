@@ -1,0 +1,39 @@
+.loginbody {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginparent {
+  display: flex;
+  height: 20vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginchild {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.domain {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.loginbutton {
+  height: 44px;
+}
+
+.inputid {
+  margin-right: 5px;
+}
+
+.inputpw {
+  margin-right: 5px;
+}
