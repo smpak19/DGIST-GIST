@@ -48,7 +48,7 @@ function Courses( {userId} ) {
         height : "32rem",
         margin : "0 auto",
         overflow: "auto",
-        border: "1px solid black"
+        border: "1px solid black",
     }
     const headstyle = {
         width : "90%",
@@ -59,6 +59,9 @@ function Courses( {userId} ) {
     }
     
     let number = {
+        width : "5rem"
+    }
+    let space = {
         width : "5rem"
     }
     let name = {
@@ -84,35 +87,26 @@ function Courses( {userId} ) {
                 }}/>
                 <button>Search</button>
             </div>
-            <div style = {headstyle}>
-                <table >
-                    <tr style = {style}>
-                            <th style = {number}>
-                            <b> 과목번호 </b>
-                            </th>
-                            <th style = {name}>
-                                <span> 교과목명  </span>
-                            </th>
-                            <th style = {type}>
-                                <span> 이수구분  </span>
-                            </th>
-                            <th style = {credit}>
-                                <span>학점</span>
-                            </th>
-                            <th style ={area}>
-                                <span> 교과 영역 </span> 
-                            </th>
-                    </tr>
+            <div >
+                <table style={boxstyle}>
+                    <thead>
+                        <tr>
+                            <td style = {space}></td>
+                            <td style = {number}><b> 과목번호 </b></td>
+                            <td style = {name}><span> 교과목명  </span></td>
+                            <td style = {type}><span> 이수구분  </span></td>
+                            <td style = {credit}><span>학점</span></td>
+                            <td style ={area}><span> 교과 영역 </span> </td>
+                        </tr>
+                    </thead>
+                    <tbody className='style'>
+                    {(course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
+                        item.과목번호.includes(search) ||
+                        item.교과목명.includes(search)))
+                        .map((e,i) => (<CourseInfo  key={i} course = {e} taken = {isheard} settaken = {setisheard} />)) }
+                    </tbody>
                 </table>
             </div>
-            
-            
-            <div style={boxstyle}>
-                { (course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
-                     item.과목번호.includes(search) ||
-                     item.교과목명.includes(search)))
-                     .map((e,i) => (<CourseInfo key={i} course = {e} taken = {isheard} settaken = {setisheard} />)) }
-             </div>
              <div>
                 <form onSubmit={handleSubmit} >
                     <button onClick={() => handleSubmit}>제출하기 </button>

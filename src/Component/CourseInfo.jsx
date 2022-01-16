@@ -19,14 +19,19 @@ function CourseInfo({course, taken, settaken, key}) {
         })
     }, [takencourse, 과목번호])
 
+    let takenthiscourse = false; 
+    takencourse.forEach((e)=>{
+        if(e === course) takenthiscourse = true;
+    })
+
     
 
-    // const [checkbox, setcheckbox] = useState(takenthiscourse);
-
     function handleCheck(e) {
+        
+        console.log('You clicked submit.');
         if(checkbox){
             setcheckbox(false)
-            settaken(taken.filter(tkn => tkn.과목번호 !== course.과목번호))
+            settaken(taken.filter(tkn => tkn !== course))
             console.log(taken)
         }
         else {
@@ -37,12 +42,14 @@ function CourseInfo({course, taken, settaken, key}) {
         }
       }
 
-    let style = {
+    let style1 = {
         border: "1px solid black",
-        padding: "20px"
+        border_top : "1px solid black",
+        bgcolor:"black"
     }
     let number = {
-        width : "5rem"
+        width : "5rem",
+        padding : "10px"
     }
     let name = {
         width : "17.5rem"
@@ -62,10 +69,8 @@ function CourseInfo({course, taken, settaken, key}) {
 
     
     return (
-        <label htmlFor={key}>
-        <div style={style}>
-            <table>
-                <td>
+        <tr style={style1}>
+                <td >
                     <input id={key} 
                     type = "checkbox" 
                     onChange={()=>handleCheck()}
@@ -75,37 +80,28 @@ function CourseInfo({course, taken, settaken, key}) {
                 <b> {과목번호} </b>
                 </td>
                 <td style ={name}>
-                    <span> {교과목명}  </span>
+                    {교과목명}  
                 </td>
                 <td style ={type}>
-                    <span> {이수구분}  </span>
+                    {이수구분} 
                 </td>
                 <td style ={credit}>
-                    <span>{학점}</span>
+                    {학점}
                 </td>
                 <td style ={area}>
-                    <span>{교과영역}</span>
+                    {교과영역}
                 </td>
-                
-                <span onMouseOver={() => setishover(true)}
+                <td><span onMouseOver={() => setishover(true)}
                 onMouseOut={() => setishover(false)}>
                     {ishover ? "" : "비고 보기"}
                     {ishover ? 비고 : ""}
-                </span>
-                
-
-            </table>
-            
-            
-            
+                </span></td>
+                            
             {/* <span> {교과분야}  / </span>
             <span> {교과영역}  / </span>
             <span> {학위구분}  / </span>
             <span> {비고} </span> */}
-            
-            
-        </div>
-        </label>
+        </tr>
     )
 }
 

@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import {Link, useNavigate} from "react-router-dom"
+import './Login.css';
 
 
 function Login( {getId, getnum} ) {
@@ -8,9 +9,6 @@ function Login( {getId, getnum} ) {
 	const REST_API_KEY = "a77e93ca6119c6cecfe89bad506f9e1b";
 	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
-	const [id, setId] = useState('');
-	const [pw, setPw] = useState('');
 
 	function handleClick(e) {
 		e.preventDefault();
@@ -28,27 +26,27 @@ function Login( {getId, getnum} ) {
 		});
   }
   return (
-    <>
-      <h1>login</h1>
+	<>
+		<div className='top'/>
+		<div className='domain'>로그인</div>
+		<div className='loginbody'>
 			<form onSubmit={handleClick}>
-				<div>
-					<label>ID : </label>
-					<input name="id" type = "text"  placeholder='user ID' required/>
-				</div>
-				<div>
-					<label>PW : </label>
-					<input name="pw" type = "password" placeholder='password' required/>
-				</div>
-				<button type="submit">로그인</button>
-				<Link to = "/register">
-				<button type='submit'>회원가입</button>
-				</Link>
-				<div>
-					<a href={KAKAO_AUTH_URL}>Kakao Login</a>
+				<div className='loginparent'>
+					<div className='loginchild'> 
+						<div>
+							<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+						</div>
+						<div>
+							<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
+						</div>
+					</div>
+					<button className='loginbutton' type="submit">로그인</button>
 				</div>
 			</form>
-      </>
-    
+			<div><a href={KAKAO_AUTH_URL}>카카오톡으로 로그인하기</a></div>
+			<div><a href="/register">회원가입</a></div>
+		</div>
+	</>
   );
 }
 
