@@ -50,6 +50,8 @@ const Profile = () => {
   }, []);
   return (
     <div>
+
+      <h1>hello</h1>
       <h2>{userId}</h2>
       <h2>{nickName}</h2>
     </div>
