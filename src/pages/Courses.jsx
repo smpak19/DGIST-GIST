@@ -3,6 +3,7 @@ import CourseInfo from "../Component/CourseInfo";
 import data from "./until19.json"
 import axios from 'axios';
 import {useNavigate, useLocation} from 'react-router-dom'
+import "./Courses.css"
 
 function Courses( {userId} ) {
     // const [courses, setcourse] = useState([{courseId : 'cse496', courseName : '몰입캠프'}, {courseId : 'cse123', courseName : '데이터 구조'}, {courseId : 'cse234', courseName : '운영체제'}])
@@ -39,44 +40,7 @@ function Courses( {userId} ) {
             setisheard(result.data.taken)
         })
     }
-    let style = {
-        border: "1px solid black",
-        padding: "20px"
-    }
-    const boxstyle = {
-        width : "90%",
-        height : "32rem",
-        margin : "0 auto",
-        overflow: "auto",
-        border: "1px solid black",
-    }
-    const headstyle = {
-        width : "90%",
-        height : "2rem",
-        margin : "0 auto",
-        overflow: "auto",
-        
-    }
-    
-    let number = {
-        width : "5rem"
-    }
-    let space = {
-        width : "5rem"
-    }
-    let name = {
-        width : "17.5rem"
-    }
-    let type = {
-        width : "4.375rem"
-    }
-    let area = {
-        width : "6.25rem"
-    }
-    let credit = {
-        width : "3.125rem",
-        textalign: "center"
-    }
+
 
     return (
         
@@ -87,20 +51,21 @@ function Courses( {userId} ) {
                 }}/>
                 <button>Search</button>
             </div>
-            <div >
-                <table style={boxstyle}>
+            <div className = "boxstyle">
+                <table className = "entiretable">
                     <thead>
                         <tr>
-                            <td style = {space}></td>
-                            <td style = {number}><b> 과목번호 </b></td>
-                            <td style = {name}><span> 교과목명  </span></td>
-                            <td style = {type}><span> 이수구분  </span></td>
-                            <td style = {credit}><span>학점</span></td>
-                            <td style ={area}><span> 교과 영역 </span> </td>
+                            <td className = "space"></td>
+                            <td className = "number"><b> 과목번호 </b></td>
+                            <td className = "name"><span> 교과목명  </span></td>
+                            <td className = "type"><span> 이수구분  </span></td>
+                            <td className = "credit"><span>학점</span></td>
+                            <td className = "area"><span> 교과 영역 </span> </td>
+                            <td className = "bigo"><span> 비고 </span> </td>
                         </tr>
                     </thead>
-                    <tbody className='style'>
-                    {(course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
+                    <tbody>
+                        {(course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                         item.과목번호.includes(search) ||
                         item.교과목명.includes(search)))
                         .map((e,i) => (<CourseInfo  key={i} course = {e} taken = {isheard} settaken = {setisheard} />)) }
