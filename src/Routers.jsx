@@ -11,15 +11,16 @@ import Register from "./pages/Register"
 
 function Routers() {
     const [userId,setUserId] = useState("");
+    const [num,setNum] = useState("");
 
     return (
         <div>
         <Routes>
             <Route path ="/" element={<Main/>} />
-            <Route path ="/login" element = {<Login getId={setUserId}/>} />
+            <Route path ="/login" element = {<Login getId={setUserId} getnum={setNum} />} />
             <Route path ="/courses" element = {<Courses userId = {userId} />} />
-            <Route path ="/survey" element = {<Survey userId = {userId} />}/>
-            <Route path = "/result" element= {<Result userId = {userId} />} /> 
+            <Route path ="/survey" element = {<Survey userId = {userId} getnum = {setNum} />}/>
+            <Route path = "/result" element= {<Result userId = {userId} usernum = {num} />} /> 
             <Route path = '/oauth/kakao/callback' element = {<Auth/>}/>
             <Route path = '/profile' element = {<Profile/>}/>
             <Route path = '/register' element = {<Register/>}/> 
