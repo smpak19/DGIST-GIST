@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from "react";
 
 
-function CourseInfo({course, taken, settaken, key}) {
+function CourseInfo({course, taken, settaken}, key) {
     const {과목번호,교과목명,이수구분,교과분야,교과영역,학위구분,학점,비고} = course;
     const takencourse = taken;
     const [checkbox, setcheckbox] = useState(false);
