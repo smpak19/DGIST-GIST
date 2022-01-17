@@ -40,17 +40,22 @@ const Auth = ({userId, setId}) => {
 
       axios.post('http://192.249.18.176:443/kakao', {id: data.properties.nickname, pw: data.id}).then( res => {
 			// console.log(`res.data`, res.data)
-			if( res.data === "courses"){
+			if( res.data === "dgist"){
 				window.sessionStorage.setItem('Id', data.properties.nickname)
         window.sessionStorage.setItem('Provider', 'Kakao')
         setId(data.properties.nickname)
 				navigate("/result", {replace: true})
-			}
+			} else if (res.data === "gist") {
+        window.sessionStorage.setItem('Id', data.properties.nickname)
+        window.sessionStorage.setItem('Provider', 'Kakao')
+        setId(data.properties.nickname)
+				navigate("/gistresult", {replace: true}) 
+      }
 			if( res.data === "correct"){
 				window.sessionStorage.setItem('Id', data.properties.nickname)
         window.sessionStorage.setItem('Provider', 'Kakao')
         setId(data.properties.nickname)
-				navigate("/survey", {replace: true})
+				navigate("/schoolsurvey", {replace: true})
 			}
 	  	});
 
