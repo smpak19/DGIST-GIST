@@ -13,7 +13,7 @@ function CourseInfo({course, taken, settaken}) {
     useEffect(() => {
         if(!isLoaded) {
             takencourse.forEach((e)=>{
-                if(e.과목번호 === 과목번호) {
+                if(e.과목번호 === 과목번호&& e.교과목명 === 교과목명) {
                     setcheckbox(true)
                     setLoad(true) 
                 }
