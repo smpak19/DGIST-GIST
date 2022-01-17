@@ -7,7 +7,7 @@ import './Login.css';
 function Login( {getId} ) {
 	const nav = useNavigate();
 	const REST_API_KEY = "a77e93ca6119c6cecfe89bad506f9e1b";
-	const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
+	const REDIRECT_URI = "http://192.249.18.176:80/oauth/kakao/callback";
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
 	function handleClick(e) {
