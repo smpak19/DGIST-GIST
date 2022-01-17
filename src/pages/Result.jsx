@@ -51,7 +51,7 @@ function Result( {userId, setId} ) {
                         <span style={ (res[i] - arr[i] > 0) ?{color : 'red'}  : { color:'blue'}} > {(res[i] - arr[i] > 0)?"부족":"초과" }</span>
                     </div>
                     <div>
-                        <ProgressBar bgcolor = {"#6a1b9a"} completed = {(arr[i]*100/res[i]).toFixed(1)} />
+                        <ProgressBar bgcolor = {"#6a1b9a"} completed = {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)} />
                         <span className="progressletter"> {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)}% 이수</span>
                     </div>
                 </div>
