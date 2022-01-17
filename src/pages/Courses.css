@@ -1,38 +1,66 @@
-.boxstyle{
-    width : 90%;
-    height : 90vh;
-    margin : 0 auto;
-    overflow: auto;
-    /* border: 1px solid black; */
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+.boxstyle {
+  width: 90%;
+  height: 90vh;
+  margin: 0 auto;
+  overflow: auto;
 }
-/* .bodystyle{
-    border: 1px solid black; */
-/* } */
-.entiretable{
-    width : 100%;
-    border: 1px solid black;
-    border-collapse: collapse
+
+.entiretable {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }
-.space{
-    width : 1rem;
+.space {
+  width: 1rem;
 }
 .number {
-    width : 2rem;
-    padding : 10px;
+  width: 2rem;
+  padding: 10px;
 }
 .name {
-    width : 5rem;
+  width: 5rem;
 }
 .type {
-    width : 3rem;
+  width: 3rem;
 }
 .area {
-    width : 3rem;
+  width: 3rem;
 }
 .credit {
-    width : 3.125rem;
-    text-align: center;
+  width: 3.125rem;
+  text-align: center;
 }
 .bigo {
-    width : 10rem;
+  width: 10rem;
+}
+
+.divgroup1 {
+  height: 90vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5%;
+}
+
+.searchbody {
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 2cm;
+  display: flex;
+  flex-direction: row;
+}
+
+.searchbutton {
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin-right: 5px;
 }

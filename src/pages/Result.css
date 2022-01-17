@@ -1,20 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 .logoutbutton {
   background-color: red;
   margin-right: 2cm;
-  font-family: "../fonts/IM_Hyemin_Regular.ttf";
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  font-size: 1.25rem;
 }
 
 .resultbody {
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  margin-left: 5cm;
+  margin-top: 10px;
+  margin-left: 2cm;
+  overflow: auto;
 }
 
 .buttongroup {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* align-items: center; */
   margin-top: 2cm;
   margin-left: 2cm;
 }
@@ -28,4 +34,12 @@
 
 .resultitem {
   font-size: 1.5rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+}
+
+.progressletter {
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  color: darkslateblue;
 }
