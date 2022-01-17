@@ -45,11 +45,12 @@ function Result( {userId, setId} ) {
             txt.map((item, i) =>
                 <div key={i} className="resulttable">
                     <div className="resultitem">
-                        {item} {arr[i]}학점 이수, {(res[i] - arr[i] >= 0)? res[i] - arr[i] : 0}학점 부족
+                        {item} {arr[i]}학점 이수, {(res[i] - arr[i] > 0)? res[i] - arr[i] +" 학점": arr[i] - res[i] +" 학점"}
+                        <span style={ (res[i] - arr[i] > 0) ?{color : 'red'}  : { color:'blue'}} > {(res[i] - arr[i] > 0)?"부족":"초과" }</span>
                     </div>
                     <div>
                         <progress value = {String(arr[i]/ res[i])} max = "1"></progress>
-                        <span> {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)}% 이수</span>
+                        <span className="progressletter"> {(arr[i]*100/res[i] >= 100) ? 100 : (arr[i]*100/res[i]).toFixed(1)}% 이수</span>
                     </div>
                 </div>
             )
@@ -61,29 +62,31 @@ function Result( {userId, setId} ) {
     }
 
     return(
-        <>
+        <div className="mainbackground">
             <div className="top"/>
-            <div className="domain">수강 신청 결과</div>
-            <div>
-                <div className="buttongroup">
-                    <div>
-                        <Link to="/courses" state={SI.current} >
-                            <button>수강 내역 수정</button>
-                        </Link>
-                        <Link to="/profile">
-                            <button>유저 정보</button>
+            <div className="divgroup1">
+                <div className="domain">수강 신청 결과</div>
+                <div>
+                    <div className="buttongroup">
+                        <div>
+                            <Link to="/courses" state={SI.current} >
+                                <button className="searchbutton">수강 내역 수정</button>
+                            </Link>
+                            <Link to="/profile">
+                                <button className="searchbutton">유저 정보</button>
+                            </Link>
+                        </div>
+                        <Link to="/">
+                                <button className="logoutbutton" onClick={() => handlelogout()}>로그아웃</button>
                         </Link>
                     </div>
-                    <Link to="/">
-                            <button className="logoutbutton" onClick={() => handlelogout()}>로그아웃</button>
-                    </Link>
+                </div>
+                <div className="resultbody">
+                {mklst()}
                 </div>
             </div>
-
-            <div className="resultbody">
-                {mklst()}
-            </div>
-        </>
+            <div className="bottom"/>
+        </div>
     )
 }
 

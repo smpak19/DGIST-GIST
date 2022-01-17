@@ -50,13 +50,14 @@ function Courses( {userId, setId} ) {
 
 
     return (
-        
-        <div>
-            <div>
-                <input type="text" placeholder="Search" onChange={e => {
+        <div className='mainbackground'>
+            <div className='top'/>
+            <div className='divgroup1'>
+            <div className='searchbody'>
+                <input className='searchbutton' type="text" placeholder="Search" onChange={e => {
                     setSearch(e.target.value)
                 }}/>
-                <button>Search</button>
+                <button className='searchbutton'>Search</button>
             </div>
             <div className = "boxstyle">
                 <table className = "entiretable">
@@ -79,14 +80,18 @@ function Courses( {userId, setId} ) {
                     </tbody>
                 </table>
             </div>
-             <div>
+             <div className='searchbody'>
                 <form onSubmit={handleSubmit} >
-                    <button onClick={() => handleSubmit}>제출하기 </button>
+                    <button className='searchbutton' onClick={() => handleSubmit}>제출하기 </button>
                 </form>
                 <form onSubmit={getInfo} >
-                    <button onClick={() => getInfo}>가져오기 </button>
+                    <button className='searchbutton' onClick={() => getInfo}>가져오기 </button>
                 </form>
              </div>
+             </div>
+             
+             <div className='bottom'/>
+             
         </div>
         
     )
