@@ -6,7 +6,7 @@ import './Result.css';
 import ProgressBar from "../Component/progress.jsx";
 
 function Result( {userId, setId} ) {
-    let txt = ["공통필수", "교선필수", "수학", "물리", "화학", "생물", "컴퓨터, 자동제어, 통계, 디자인공학", "융복합(UGRP, 기타)", "영어", "리더십", "음악, 체육", "인문사회, 기술경영"]
+    let txt = ["공통필수", "교선필수", "수학", "물리", "화학", "생물", "컴퓨터, 자동제어, 통계, 디자인공학", "융복합(UGRP, 기타)", "영어", "리더십", "음악, 체육", "인문사회, 기술경영", "융복합 이학사", "융복합 공학사"]
     const location = useLocation()
 
     const [arr, setArr] = useState([])
