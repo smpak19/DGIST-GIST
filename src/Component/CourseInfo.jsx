@@ -13,20 +13,20 @@ function CourseInfo({course, taken, settaken}) {
     useEffect(() => {
         if(!isLoaded) {
             takencourse.forEach((e)=>{
-                if(e.과목번호 === 과목번호&& e.교과목명 === 교과목명) {
+                if(e.과목번호 === 과목번호 && e.교과목명 === 교과목명) {
                     setcheckbox(true)
                     setLoad(true) 
                 }
             })
         } 
      }
-    , [takencourse, 과목번호, isLoaded]) 
+    , [takencourse, 과목번호, isLoaded, 교과목명]) 
 
     function handleCheck(e) {
         console.log('You clicked submit.');
         if(checkbox){
             setcheckbox(false)
-            settaken(taken.filter(tkn => tkn.과목번호 !== course.과목번호))
+            settaken(taken.filter(tkn => (tkn.교과목명 !== course.교과목명) || (tkn.과목번호 !== course.과목번호) ))
             console.log(taken)
         }
         else {
