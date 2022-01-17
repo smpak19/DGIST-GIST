@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 .loginbody {
   display: flex;
-  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -8,7 +9,7 @@
 
 .loginparent {
   display: flex;
-  height: 20vh;
+  height: 30vh;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -22,13 +23,43 @@
 }
 
 .loginbutton {
-  height: 44px;
+  height: 2.5cm;
+  width: 2cm;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }
 
 .inputid {
   margin-right: 5px;
+  margin-bottom: 5px;
+  height: 1cm;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }
 
 .inputpw {
   margin-right: 5px;
+  height: 1cm;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+}
+
+.kakaolink {
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.registerlink {
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+}
+
+.bottom {
+  min-height: 100px;
 }

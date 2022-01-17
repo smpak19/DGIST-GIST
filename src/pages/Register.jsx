@@ -32,28 +32,31 @@ function Register() {
 		
   }
   return (
-    <>
-		<div className='top'/>
-		<div className='domain'>회원가입</div>
-		<div className='registerbody'>
-			<form onSubmit={handleClick}>
-				<div className='registerparent'>
-					<div className='registerchild'> 
-						<div>
-							<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+    <div className='mainbackground'>
+		<div className='maintop'/>
+		<div className='divgroup'>
+			<div className='domain'>회원가입</div>
+			<div className='registerbody'>
+				<form onSubmit={handleClick}>
+					<div className='registerparent'>
+						<div className='registerchild'> 
+							<div>
+								<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+							</div>
+							<div>
+								<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
+							</div>
+							<div>
+								<input className='inputrpw' name="rpw" type = "password" placeholder='confirm password' required/>
+							</div>
 						</div>
-						<div>
-							<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
-						</div>
-                        <div>
-							<input className='inputpw' name="rpw" type = "password" placeholder='confirm password' required/>
-						</div>
+						<button className = "registerbutton" type='submit'>회원가입</button>
 					</div>
-					<button className = "registerbutton" type='submit'>회원가입</button>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
-	</>
+		<div className='bottom'/>
+	</div>
     
   );
 }
