@@ -12,6 +12,8 @@ function ratio19(arr) {
     let leader = 0
     let music = 0
     let lit = 0
+    let yg = 0
+    let ye = 0
 
     // 공필, 교필 학점 확인
     for (var i = 0 ; i < arr.length; i++) {
@@ -21,6 +23,11 @@ function ratio19(arr) {
             gyo += arr[i].학점
             if (arr[i].교과분야 === "인문소양"){
                 lit += arr[i].학점
+            }
+            if((arr[i].교과목명.includes('(이)') || arr[i].교과목명.includes('(이.공)'))) {
+                ye += arr[i].학점
+            } else if((arr[i].교과목명.includes('(공)') || arr[i].교과목명.includes('(이.공)'))) {
+                yg += arr[i].학점
             }
         } else {
             gong += arr[i].학점
@@ -54,14 +61,14 @@ function ratio19(arr) {
         // console.log(`학점쓰`, gong, gyo, math)
     }
     
-    return [gong, gyo, math, phy, chem, bio, comset, ugrp, eng, leader, music, lit]
+    return [gong, gyo, math, phy, chem, bio, comset, ugrp, eng, leader, music, lit, ye, yg]
 }
 
 function getlimit(num) {
     if(num < 18) {
-        return [80, 67, 12, 8, 8, 8, 12, 6, 6, 4, 4, 12]
+        return [80, 67, 12, 8, 8, 8, 12, 6, 6, 4, 4, 12, 27, 27]
     } else {
-        return [72, 68, 12, 7, 7, 7, 9, 6, 6, 2, 4, 29]
+        return [72, 68, 12, 7, 7, 7, 9, 6, 6, 2, 4, 12, 27, 27]
     }
 }
 
