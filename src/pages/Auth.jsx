@@ -4,7 +4,7 @@ import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 const Auth = ({userId, setId}) => {
   const REST_API_KEY = 'a77e93ca6119c6cecfe89bad506f9e1b';
-  const REDIRECT_URI = 'http://localhost:3000/oauth/kakao/callback';
+  const REDIRECT_URI = 'http://192.249.18.176:80/oauth/kakao/callback';
   const CLIENT_SECRET = '49EKSNqqQKAuCXFJCJW164f1pgtTLBlv';
   const navigate = useNavigate();
   useEffect(() => {
