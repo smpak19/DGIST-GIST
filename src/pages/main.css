@@ -1,7 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
+.mainbackground {
+  background-image: url("../../public/src8.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .top {
   min-height: 2cm;
+}
+
+.maintop {
+  min-height: 10cm;
 }
 
 .domain {
@@ -9,13 +22,14 @@
   font-size: 4rem;
   font-family: "Jua", sans-serif;
   text-decoration: none;
+  margin-top: 2cm;
 }
 
 .mainbody {
   display: flex;
-  height: 100vh;
+  margin-top: 4cm;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -24,6 +38,31 @@
   justify-content: center;
 }
 
+.startbutton {
+  font-size: 1.25rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  height: 2cm;
+  width: 3cm;
+  border: 4px solid black;
+  border-radius: 25%;
+}
+
 .editor {
+  text-align: bottom;
+  font-size: 1.25rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
   text-align: center;
+  color: white;
+  margin-top: 1.5cm;
+}
+
+.divgroup {
+  height: 500px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15%;
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 .surveybody {
   display: flex;
   flex-direction: column;
@@ -6,15 +8,23 @@
 }
 
 .userid {
-  margin-top: 8cm;
+  margin-top: 3cm;
   font-size: 2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }
 
 .question {
   margin-top: 2cm;
   font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }
 
 .answer {
   font-size: 2rem;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
 }

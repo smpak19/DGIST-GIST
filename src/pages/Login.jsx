@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import {Link, useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import './Login.css';
 
 
@@ -26,27 +26,30 @@ function Login( {getId, getnum} ) {
 		});
   }
   return (
-	<>
-		<div className='top'/>
-		<div className='domain'>로그인</div>
-		<div className='loginbody'>
-			<form onSubmit={handleClick}>
-				<div className='loginparent'>
-					<div className='loginchild'> 
-						<div>
-							<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+	<div className='mainbackground'>
+		<div className='maintop'/>
+		<div className="divgroup" >
+			<div className='domain'>로그인</div>
+			<div className='loginbody'>
+				<form onSubmit={handleClick}>
+					<div className='loginparent'>
+						<div className='loginchild'> 
+							<div>
+								<input className='inputid' name="id" type = "text"  placeholder='user ID' required/>
+							</div>
+							<div>
+								<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
+							</div>
 						</div>
-						<div>
-							<input className='inputpw' name="pw" type = "password" placeholder='password' required/>
-						</div>
+						<button className='loginbutton' type="submit">입력</button>
 					</div>
-					<button className='loginbutton' type="submit">로그인</button>
-				</div>
-			</form>
-			<div><a href={KAKAO_AUTH_URL}>카카오톡으로 로그인하기</a></div>
-			<div><a href="/register">회원가입</a></div>
+				</form>
+				<div className='kakaolink'><a href={KAKAO_AUTH_URL}>카카오톡으로 로그인하기</a></div>
+				<div className='registerlink'><a href="/register">회원가입</a></div>
+			</div>
 		</div>
-	</>
+		<div className='bottom' />
+	</div>
   );
 }
 
