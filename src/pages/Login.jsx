@@ -16,17 +16,22 @@ function Login( {getId} ) {
 
 		axios.post('http://192.249.18.176:443/kakao', json).then( res => {
 			// console.log(`res.data`, res.data)
-			if( res.data === "courses"){
+			if( res.data === "dgist"){
 				getId(e.target.id.value)
 				window.sessionStorage.setItem('Id', e.target.id.value);
 				window.sessionStorage.setItem('Provider', 'Normal')
 				nav("/result")
+			} else if(res.data === "gist") {
+				getId(e.target.id.value)
+				window.sessionStorage.setItem('Id', e.target.id.value);
+				window.sessionStorage.setItem('Provider', 'Normal')
+				nav("/gistresult")	
 			}
 			if( res.data === "correct"){
 				getId(e.target.id.value)
 				window.sessionStorage.setItem('Id', e.target.id.value);
 				window.sessionStorage.setItem('Provider', 'Normal')
-				nav("/survey")
+				nav("/schoolsurvey")
 			}
 		});
   }
