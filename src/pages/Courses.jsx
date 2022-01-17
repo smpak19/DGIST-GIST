@@ -75,8 +75,11 @@ function Courses( {userId, setId} ) {
                     <tbody>
                         {(course.filter((item) => item.과목번호.toLowerCase().includes(search) ||
                         item.과목번호.includes(search) ||
-                        item.교과목명.includes(search)))
-                        .map((e,i) => (<CourseInfo  key={i} course = {e} taken = {isheard} settaken = {setisheard}  />)) }
+                        item.교과목명.includes(search) ||
+                        item.교과목명.toLowerCase().includes(search) ||
+                        item.이수구분.includes(search) ||
+                        item.교과영역.includes(search)))
+                        .map((e) => (<CourseInfo  key={e.과목번호 + e.교과목명} course = {e} taken = {isheard} settaken = {setisheard}  />)) }
                     </tbody>
                 </table>
             </div>
