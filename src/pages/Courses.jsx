@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import CourseInfo from "../Component/CourseInfo";
 import data from "./until19.json"
 import axios from 'axios';
-import {useNavigate, useLocation, Location} from 'react-router-dom'
+import {useNavigate, useLocation} from 'react-router-dom'
 import "./Courses.css"
 
 function Courses( {userId, setId} ) {
@@ -14,6 +14,7 @@ function Courses( {userId, setId} ) {
     const [isheard, setisheard] = useState([])
     const nav = useNavigate()
     const loc = useLocation()
+    console.log(loc.state)
     
     useEffect(() => {
         if({userId}.userId === '') {

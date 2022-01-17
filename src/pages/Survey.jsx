@@ -33,8 +33,8 @@ function Survey( {userId, setId} ) {
                 <div className="userid">user ID : {userId}</div>
                 <div className="question">{survey.question}</div>
                 <div className="answer">
-                    {survey.answers.map((ans) => 
-                    <button value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
+                    {survey.answers.map((ans, i) => 
+                    <button key={i} value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
                 </div>
             </div>
         </>
