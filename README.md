@@ -10,7 +10,6 @@
 |main|login|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149888426-cef40855-5bc3-41d9-ad76-21be719147b5.png">|<img src="https://user-images.githubusercontent.com/86216960/149888552-0dbd9fc7-8d02-4780-8238-14ef6f6d2de9.png">|
-
 |register|choose|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149889124-b6b1c4f9-5689-4b49-9448-bbcb0009132c.png">|<img src="https://user-images.githubusercontent.com/86216960/149889244-2b08c94c-7c10-47a2-b091-708e1cc2b78f.png">|
@@ -32,10 +31,10 @@
 |survey|courses|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149890064-df5239d1-616e-4060-b756-e9396acc8fbf.png">|<img src="https://user-images.githubusercontent.com/86216960/149890700-b575674f-2de6-4182-bd21-041b04640364.png">|
-
 |result|profile|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149889597-ebee8839-9239-4e24-bc7e-56e34125260d.png">|<img src="https://user-images.githubusercontent.com/86216960/149890831-2acbd72b-60e6-4f6f-9814-0ee8d1b86bab.png">|
+
 - DGIST를 선택할 경우 배경이 DGIST로 바뀝니다.
   - DGIST는 무학과 단일학부이기 때문에 학번만 선택하도록 하였습니다.
   - 학번을 선택하여 다음 페이지로 넘어갑니다.
@@ -66,3 +65,10 @@
   - GIST의 학사편람을 참고하여 로직을 작성하였습니다.
 
 - 유저 정보 버튼을 클릭하면 유저 정보를 볼 수 있도록 되어있고, 로그아웃 버튼을 누르면 메인화면으로 돌아갑니다.
+
+---
+## CREDIT
+
+> Junseo Kang / pointjunseo@dgist.ac.kr   
+> Seungmin Park / smpak@kaist.ac.kr   
+> Junyoung Choi / ace9804@unist.ac.kr
