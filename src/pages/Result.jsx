@@ -67,7 +67,7 @@ function Result( {userId, setId} ) {
         <div className="dgistbackground">
             <div className="top"/>
             <div className="divgroup1">
-                <div className="domain">수강 신청 결과</div>
+                <div className="domain">계산 결과</div>
                 <div>
                     <div className="buttongroup">
                         <div>

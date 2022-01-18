@@ -5,11 +5,11 @@ const ProgressBar = (props) => {
     const [complete, setCompleted] = useState(0)
 
     const containerStyles = {
-        height: 20,
-        width: '80%',
+        height: 40,
+        width: '90%',
         backgroundColor: "#e0e0de",
         borderRadius: 50,
-        margin: 50
+        margin: 30,
     }
 
     const fillerStyles = {
@@ -18,13 +18,17 @@ const ProgressBar = (props) => {
         transition: 'width 1s ease-in-out',
         backgroundColor: bgcolor,
         borderRadius: 'inherit',
-        textAlign: 'right'
+        textAlign: 'right',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
     }
 
     const labelStyles = {
-        padding: 5,
+        padding: 10,
         color: 'white',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: '1.2rem',
     }
 
     useEffect(() => {
@@ -34,7 +38,7 @@ const ProgressBar = (props) => {
     return (
         <div style={containerStyles}>
             <div style={fillerStyles}>
-                <span style={labelStyles}>{`${complete}%`}</span>
+                <div style={labelStyles}>{`${complete}%`}</div>
             </div>
         </div>
     )

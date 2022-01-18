@@ -26,24 +26,19 @@ function Profile({userId, setId}) {
         <div className='buttongroup1'>
                 <div>
                     <Link to="/gistresult">
-                        <button className="searchbutton">결과 보기</button>
+                        <button className="searchbutton">결과로 돌아가기</button>
                     </Link>     
                 </div>
                     <Link to="/">
                         <button className='logoutbutton1' onClick={() => handlelogout()}>로그아웃</button>
                     </Link>
             </div>
-                <div>
-                    <h1>전공 현황</h1>
-                    <h1>주전공: {major.전공명1}</h1>
-                    <h1>복/부전공: {major.전공명2}</h1>
-                </div>
         </div>
     ) : (
         <div className='buttongroup1'>
                 <div>
                     <Link to="/result">
-                        <button className="searchbutton">결과 보기</button>
+                        <button className="searchbutton">결과로 돌아가기</button>
                     </Link>     
                 </div>
                     <Link to="/">
