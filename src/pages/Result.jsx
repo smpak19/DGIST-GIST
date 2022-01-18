@@ -74,7 +74,7 @@ function Result( {userId, setId} ) {
                             <Link to="/courses" state={SI.current} >
                                 <button className="searchbutton">수강 내역 수정</button>
                             </Link>
-                            <Link to="/profile">
+                            <Link to="/profile" state = {{SI: SI.current, school: "DGIST"}}>
                                 <button className="searchbutton">유저 정보</button>
                             </Link>
                         </div>

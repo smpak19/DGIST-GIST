@@ -14,7 +14,7 @@ function Login( {getId} ) {
 		e.preventDefault();
 		var json = {id: e.target.id.value, pw: e.target.pw.value};
 
-		axios.post('http://192.249.18.176:443/kakao', json).then( res => {
+		axios.post('http://192.249.18.176:443/login', json).then( res => {
 			// console.log(`res.data`, res.data)
 			if( res.data === "dgist"){
 				getId(e.target.id.value)
