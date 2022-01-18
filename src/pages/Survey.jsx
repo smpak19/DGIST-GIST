@@ -26,7 +26,7 @@ function Survey( {userId, setId} ) {
     }, [setId, userId]);
    
    return(
-        <div className="mainbackground">
+        <div className="dgistbackground">
             <div className="maintop"/>
             <div className="divgroup">
                 <div className="domain">Survey</div>
@@ -35,7 +35,7 @@ function Survey( {userId, setId} ) {
                     <div className="question">{survey.question}</div>
                     <div>
                         {survey.answers.map((ans) => 
-                        <button className="answer" value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
+                        <button key = {ans.text} className="answer" value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
                     </div>
                 </div>
             </div>

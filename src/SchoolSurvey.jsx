@@ -1,5 +1,6 @@
 import {React, useEffect} from "react";
 import { Link } from "react-router-dom";
+import './SchoolSurvey.css';
 
 function SchoolSurvey({userId, setId}) {
 
@@ -10,13 +11,20 @@ function SchoolSurvey({userId, setId}) {
     }, [setId, userId]);
 
     return(
-        <div>
-            <Link to="/survey">
-                <button>DGIST</button>
-            </Link>
-            <Link to= "/gistsurvey">
-                <button>GIST</button>
-            </Link>
+        <div className="mainbackground">
+            <div className="maintop"/>
+            <div className="divgroup3">
+                <div className="domain">학교 선택</div>
+                <div className="schoolchoosebutton">
+                    <Link to="/survey">
+                        <button className="schoolbutton">DGIST</button>
+                    </Link>
+                    <Link to= "/gistsurvey">
+                        <button className="schoolbutton">GIST</button>
+                    </Link>
+                </div>
+            </div>
+            <div className="bottom"/>
         </div>
     )
 }

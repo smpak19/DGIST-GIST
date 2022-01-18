@@ -31,7 +31,7 @@ function Courses( {userId, setId} ) {
         e.preventDefault();
         let SI = loc.state
         nav("/result", {state: {arr: isheard, num: SI}})
-        axios.post("http://192.249.18.176:443/user", {userid : {userId} , taken : {isheard}, SI: {SI}, School: "dgist", Major: {'전공타입':'무학과','전공명1':'무학과'}});
+        axios.post("http://192.249.18.176:443/user", {userid : {userId} , taken : {isheard}, SI: {SI}, School: "dgist", Major: {전공타입: "무학과"}});
     }
 
 
@@ -50,7 +50,7 @@ function Courses( {userId, setId} ) {
 
 
     return (
-        <div className='mainbackground'>
+        <div className='dgistbackground'>
             <div className='top'/>
             <div className='divgroup1'>
             <div className='searchbody'>
