@@ -16,6 +16,13 @@ function Login( {getId} ) {
 
 		axios.post('http://192.249.18.176:443/login', json).then( res => {
 			// console.log(`res.data`, res.data)
+			if( res.data === `There is no registered ID`){
+				window.alert('등록되지 않은 ID 입니다.')
+			}
+			if( res.data === 'Wrong Password')
+			{
+				window.alert('비밀번호를 틀렸습니다.')
+			}
 			if( res.data === "dgist"){
 				getId(e.target.id.value)
 				window.sessionStorage.setItem('Id', e.target.id.value);

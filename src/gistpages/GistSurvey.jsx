@@ -88,13 +88,12 @@ function GistSurvey( {userId, setId} ) {
             window.alert('학번을 선택해주세요')
             return;
         }
-        if(op1 != 'single'){
+        if(op1 !== 'single'){
             if(op3 === '' ||op3 === 'none'){
                 window.alert('복수/부전공을 선택해주세요')
                 return;
             }
         }
-        
         nav('/gistcourses', {state: {SI: input, major: {"전공타입":op1, "전공명1":op2, "전공명2":op3}}})
     }
    

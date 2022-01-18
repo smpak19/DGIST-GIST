@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 3cm;
+  margin-top: 1cm;
 }
 
 .divgroup3 {
@@ -18,8 +18,13 @@
 }
 
 .schoolbutton {
-  font-size: 1.75rem;
+  font-size: 5rem;
   font-family: "Jua", sans-serif;
   text-decoration: none;
-  margin: 1cm;
+  height: 7cm;
+  width: 8cm;
+  border: 4px solid black;
+  border-radius: 25%;
+  margin-right: 20px;
+  margin-left: 20px;
 }
