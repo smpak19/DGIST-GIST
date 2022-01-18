@@ -16,6 +16,7 @@ function Profile({userId, setId}) {
     }, [setId, userId]);
 
     const loc = useLocation()
+    console.log(loc.state)
     const SI = loc.state.SI
     const sch = loc.state.school
     const major = loc.state.major
@@ -27,9 +28,6 @@ function Profile({userId, setId}) {
                     <Link to="/gistresult">
                         <button className="searchbutton">결과 보기</button>
                     </Link>     
-                    <Link to="/gistcourses">
-                        <button className="searchbutton" state = {{SI: SI, major : major}}>강의 목록 추가</button>
-                    </Link>
                 </div>
                     <Link to="/">
                         <button className='logoutbutton1' onClick={() => handlelogout()}>로그아웃</button>
@@ -47,9 +45,6 @@ function Profile({userId, setId}) {
                     <Link to="/result">
                         <button className="searchbutton">결과 보기</button>
                     </Link>     
-                    <Link to="/courses">
-                        <button className="searchbutton" state = {{SI: SI}}>강의 목록 추가</button>
-                    </Link>
                 </div>
                     <Link to="/">
                         <button className='logoutbutton1' onClick={() => handlelogout()}>로그아웃</button>

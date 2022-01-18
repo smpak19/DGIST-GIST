@@ -113,8 +113,8 @@ function GistSurvey( {userId, setId} ) {
                 </div>
                 <div className="chooseresult">
                     {survey.answers.map((ans) =>
-                    <div>
-                    <input key = {ans.text} id={ans.text} type="radio" checked={input === ans.text}  value={ans.text} onChange={handleChange}/>
+                    <div key = {ans.text}>
+                    <input id={ans.text} type="radio" checked={input === ans.text}  value={ans.text} onChange={handleChange}/>
                     <span>{ans.text}학번</span>
                     </div>
                     )}   
