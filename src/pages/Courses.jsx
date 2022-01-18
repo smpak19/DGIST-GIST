@@ -31,7 +31,7 @@ function Courses( {userId, setId} ) {
         e.preventDefault();
         let SI = loc.state
         nav("/result", {state: {arr: isheard, num: SI}})
-        axios.post("http://192.249.18.176:443/user", {userid : {userId} , taken : {isheard}, SI: {SI}, School: "dgist", Major: null});
+        axios.post("http://192.249.18.176:443/user", {userid : {userId} , taken : {isheard}, SI: {SI}, School: "dgist", Major: {전공타입: "무학과"}});
     }
 
 
