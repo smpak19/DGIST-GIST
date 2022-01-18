@@ -76,7 +76,7 @@ function GistResult( {userId, setId} ) {
                             <Link to="/gistcourses" state = {{SI: SI.current, major : Major.current}} >
                                 <button className="searchbutton">수강 내역 수정</button>
                             </Link>
-                            <Link to="/profile">
+                            <Link to="/profile" state = {{SI: SI.current, major: Major.current, school: "GIST"}}>
                                 <button className="searchbutton">유저 정보</button>
                             </Link>
                         </div>
