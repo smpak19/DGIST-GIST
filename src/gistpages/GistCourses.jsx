@@ -3,7 +3,7 @@ import CourseInfo from "../Component/GistCourseInfo";
 import data from "./gist.json"
 import axios from 'axios';
 import {useNavigate, useLocation} from 'react-router-dom'
-import "./GistCourses.css"
+import './GistCourses.css';
 
 function GistCourses( {userId, setId} ) {
     // const [courses, setcourse] = useState([{courseId : 'cse496', courseName : '몰입캠프'}, {courseId : 'cse123', courseName : '데이터 구조'}, {courseId : 'cse234', courseName : '운영체제'}])
@@ -49,10 +49,8 @@ function GistCourses( {userId, setId} ) {
         window.location.replace('/gistcourses')
     }
 
-
-
     return (
-        <div className='mainbackground'>
+        <div className='gistbackground'>
             <div className='top'/>
             <div className='divgroup1'>
             <div className='searchbody'>

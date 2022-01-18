@@ -2,7 +2,6 @@ import {React,useState,useEffect, useCallback, useRef} from "react";
 import {useLocation, Link} from 'react-router-dom'
 import { gist, getlimit } from './modelgist.js'
 import axios from 'axios';
-import './GistResult.css';
 import ProgressBar from "../Component/progress.jsx";
 
 // [언어, 인문사회, hus, ppe, 소프트웨어, 기초과학, 새내기, 주전공, 연구, 공통과목, 복/부전공, 무학점필수 , 총학점]
@@ -66,7 +65,7 @@ function GistResult( {userId, setId} ) {
     }
 
     return(
-        <div className="mainbackground">
+        <div className="gistbackground">
             <div className="top"/>
             <div className="divgroup1">
                 <div className="domain">수강 신청 결과</div>
