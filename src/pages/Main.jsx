@@ -7,7 +7,9 @@ function Main() {
         <div className="mainbackground">
             <div className="maintop"/>
             <div className="divgroup" >
-                <div className="domain">(D)GIST 졸업요건 계산기</div>
+                <div className="domain">
+                    DGIST/GIST <br/> 졸업요건 계산기
+                </div>
                 <div className="mainbody">
                     <div className="start">
                         <Link to ="/login">
