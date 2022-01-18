@@ -10,6 +10,7 @@
 |main|login|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149888426-cef40855-5bc3-41d9-ad76-21be719147b5.png">|<img src="https://user-images.githubusercontent.com/86216960/149888552-0dbd9fc7-8d02-4780-8238-14ef6f6d2de9.png">|
+
 |register|choose|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149889124-b6b1c4f9-5689-4b49-9448-bbcb0009132c.png">|<img src="https://user-images.githubusercontent.com/86216960/149889244-2b08c94c-7c10-47a2-b091-708e1cc2b78f.png">|
@@ -31,6 +32,7 @@
 |survey|courses|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149890064-df5239d1-616e-4060-b756-e9396acc8fbf.png">|<img src="https://user-images.githubusercontent.com/86216960/149890700-b575674f-2de6-4182-bd21-041b04640364.png">|
+
 |result|profile|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149889597-ebee8839-9239-4e24-bc7e-56e34125260d.png">|<img src="https://user-images.githubusercontent.com/86216960/149890831-2acbd72b-60e6-4f6f-9814-0ee8d1b86bab.png">|
@@ -53,6 +55,7 @@
 |survey|courses|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149890947-fa178c2d-1995-4e1d-b3b3-105dfbdd7756.png">|<img src="https://user-images.githubusercontent.com/86216960/149891050-378f5943-66e3-4fe0-8b93-656e23fcbe00.png">|
+
 |result|profile|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/86216960/149891205-a198b40d-3a9a-4b8c-af9d-cc444d15d98a.png">|<img src="https://user-images.githubusercontent.com/86216960/149891271-9a6ea868-faba-4ccd-823c-d87e2441bd05.png">|
