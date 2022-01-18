@@ -7,6 +7,19 @@
   align-items: center;
 }
 
+.gisttop {
+  min-height: 6cm;
+}
+
+.divgroup4 {
+  height: 68vh;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 15%;
+}
+
 .userid {
   margin-top: 3cm;
   font-size: 2rem;
@@ -17,7 +30,6 @@
 .question {
   margin-top: 2cm;
   font-size: 1.5rem;
-  font-size: 1.2rem;
   font-family: "Jua", sans-serif;
   text-decoration: none;
 }
@@ -27,4 +39,35 @@
   font-size: 1.2rem;
   font-family: "Jua", sans-serif;
   text-decoration: none;
+}
+
+.option {
+  font-size: 1.5rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.optiongroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1cm;
+}
+
+.chooseresult {
+  font-size: 1.5rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  margin-bottom: 1.75cm;
+  margin-left: 2.5cm;
+  margin-top: 2cm;
+}
+
+.gistresult {
+  font-size: 1.5rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  margin-left: 3cm;
 }

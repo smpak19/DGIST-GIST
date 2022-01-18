@@ -50,7 +50,7 @@ function Courses( {userId, setId} ) {
 
 
     return (
-        <div className='mainbackground'>
+        <div className='dgistbackground'>
             <div className='top'/>
             <div className='divgroup1'>
             <div className='searchbody'>

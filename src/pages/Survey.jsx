@@ -26,7 +26,7 @@ function Survey( {userId, setId} ) {
     }, [setId, userId]);
    
    return(
-        <div className="mainbackground">
+        <div className="dgistbackground">
             <div className="maintop"/>
             <div className="divgroup">
                 <div className="domain">Survey</div>

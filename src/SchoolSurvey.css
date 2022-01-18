@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+.schoolchoosebutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3cm;
+}
+
+.divgroup3 {
+  height: 500px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15%;
+}
+
+.schoolbutton {
+  font-size: 1.75rem;
+  font-family: "Jua", sans-serif;
+  text-decoration: none;
+  margin: 1cm;
+}

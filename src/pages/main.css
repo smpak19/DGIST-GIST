@@ -1,7 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
+.dgistbackground {
+  background-image: url("../../public/dgist.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .mainbackground {
-  background-image: url("../../public/src8.jpg");
+  background-image: url("../../public/kaist.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gistbackground {
+  background-image: url("../../public/gist.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -31,7 +49,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color : "6FB6"
+  color: "6FB6";
 }
 
 .start {

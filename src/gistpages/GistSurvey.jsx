@@ -84,55 +84,47 @@ function GistSurvey( {userId, setId} ) {
     }
    
    return(
-        <div>
-            <select onChange={handleChange1}>
-                {option1.map((option) => (
-				<option key={option.value} value={option.value}>
-					{option.name}
-				</option>
-			))}
-            </select>
-            <select onChange={handleChange2}>
-                {option4.map((option) => (
-				<option key={option.value} value={option.value}>
-					{option.name}
-				</option>
-			))}
-            </select>
-            <select onChange={handleChange3}>
-                {option2.map((option) => (
-				<option key={option.value} value={option.value}>
-					{option.name}
-				</option>
-			))}
-            </select>
-            <div>
-                {survey.answers.map((ans) =>
-                <div>
-                <input id={ans.text} type="radio" checked={input === ans.text}  value={ans.text} onChange={handleChange}/>
-                <span>{ans.text}학번</span>
+        <div className="gistbackground">
+            <div className="gisttop"/>
+            <div className="divgroup4">
+                <div className="domain">학과 선택</div>
+                <div className="optiongroup">
+                    <select className="option" onChange={handleChange1}>
+                        {option1.map((option) => (
+                        <option  key={option.value} value={option.value}>
+                            {option.name}
+                        </option>
+                    ))}
+                    </select>
+                    <select className="option" onChange={handleChange2}>
+                        {option4.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.name}
+                        </option>
+                    ))}
+                    </select>
+                    <select className="option" onChange={handleChange3}>
+                        {option2.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.name}
+                        </option>
+                    ))}
+                    </select>
                 </div>
-                )}   
+                <div className="chooseresult">
+                    {survey.answers.map((ans) =>
+                    <div>
+                    <input id={ans.text} type="radio" checked={input === ans.text}  value={ans.text} onChange={handleChange}/>
+                    <span>{ans.text}학번</span>
+                    </div>
+                    )}   
+                </div>
+                <div>
+                    <button className="gistresult" onClick={() => onclick()}>입력</button>
+                </div>
             </div>
-            <div>
-                <button onClick={() => onclick()}>submit</button>
-            </div>
+            <div className="bottom" />
         </div>
-        // <div className="mainbackground">
-        //     <div className="maintop"/>
-        //     <div className="divgroup">
-        //         <div className="domain">Survey</div>
-        //         <div className="surveybody">
-        //             <div className="userid">user ID : {userId}</div>
-        //             <div className="question">{survey.question}</div>
-        //             <div>
-        //                 {survey.answers.map((ans) => 
-        //                 <button className="answer" value={ans.text} onClick={() => handleClick(ans.text)}>{ans.text}</button>)}
-        //             </div>
-        //         </div>
-        //     </div>
-        //     <div className="bottom"/>
-        // </div>
    ) 
 }
 
